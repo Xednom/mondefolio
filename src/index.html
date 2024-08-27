@@ -47,7 +47,7 @@
       <h1 class="hero-title load-hidden">
         Hi, my name is <span class="text-color-main">Richmond Lacanlalay</span>
         <br />
-        I'm a Software Engineer.
+        I'm a&nbsp;<span id="role"></span>
       </h1>
       <span class="about-wrapper__image load-hidden">The Developer that you wish you had.</span>
       <p class="hero-cta load-hidden">
@@ -517,6 +517,24 @@
     </div>
   </footer>
   <!-- /END Footer Section -->
+  <!-- <script>
+    var roles = ["Full Stack Developer.", "Backend Developer."];
+    var i = 0;
+    var roleElement = document.getElementById('role');
+
+    function changeRole() {
+      roleElement.textContent = roles[i];
+      roleElement.classList.remove('fade-in');
+      roleElement.classList.add('fade-out');
+      i = i < roles.length - 1 ? i + 1 : 0;
+    }
+
+    setInterval(function () {
+      roleElement.classList.remove('fade-out');
+      roleElement.classList.add('fade-in');
+      // setTimeout(changeRole, 1000); // Matches the fade-in duration
+    }, 3000); // Change every 3 seconds
+  </script> -->
 
   <script defer type="module" src="index.js"></script>
 </body>

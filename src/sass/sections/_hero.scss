@@ -65,4 +65,51 @@
       }
     }
   }
+
+  @keyframes fadeAndScale {
+    0%, 33.33%, 66.66%, 100% {
+      opacity: 0;
+      transform: scale(1.2);
+      color: #FF5733;
+      text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    10%, 43.33%, 76.66% {
+      opacity: 1;
+      transform: scale(1);
+      color: $primary-color;
+      text-shadow: none;
+    }
+  }
+  
+  .role-container {
+    display: inline-block;
+    position: relative;
+    height: 2em; // Adjust based on your text size
+    overflow: hidden;
+  }
+  
+  #role {
+    display: inline-block;
+    position: absolute;
+    animation: fadeAndScale 9s infinite ease-in-out;
+  }
+  
+  @keyframes rotateRoles {
+    0%, 33.33% {
+      content: "Software Engineer";
+    }
+    33.34%, 66.66% {
+      content: "Full Stack Developer";
+    }
+    66.67%, 100% {
+      content: "Backend Developer";
+    }
+  }
+  
+  #role::before {
+    content: "Software Engineer";
+    animation: rotateRoles 9s infinite step-start;
+  }
+  
+  
 }
