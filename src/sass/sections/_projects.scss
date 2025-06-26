@@ -75,4 +75,1202 @@
       }
     }
   }
+.projects-section {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $primary-color;
+    margin-bottom: 3rem;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: $primary-color;
+      border-radius: 2px;
+    }
+  }
+}
+
+// Base tech tag styling
+.tech-tag {
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+// Technology-specific colors
+.tech-tag {
+  // Frontend Frameworks & Libraries
+  &[data-tech="react"],
+  &:contains("React") {
+    background: #61DAFB;
+    color: #20232A;
+    border-color: #61DAFB;
+    
+    &:hover {
+      background: #20232A;
+      color: #61DAFB;
+    }
+  }
+  
+  &[data-tech="vue"],
+  &:contains("Vue") {
+    background: #4FC08D;
+    color: white;
+    border-color: #4FC08D;
+    
+    &:hover {
+      background: white;
+      color: #000;
+    }
+  }
+
+  &[data-tech="nuxt"],
+  &:contains("Nuxt") {
+    background: #00DC82;
+    color: white;
+    border-color: #00DC82;
+    
+    &:hover {
+      background: white;
+      color: #000;
+    }
+  }
+  
+  &[data-tech="angular"],
+  &:contains("Angular") {
+    background: #DD0031;
+    color: white;
+    border-color: #DD0031;
+    
+    &:hover {
+      background: white;
+      color: #DD0031;
+    }
+  }
+  
+  &[data-tech="svelte"],
+  &:contains("Svelte") {
+    background: #FF3E00;
+    color: white;
+    border-color: #FF3E00;
+    
+    &:hover {
+      background: white;
+      color: #FF3E00;
+    }
+  }
+  
+  // Backend Frameworks
+  &[data-tech="django"],
+  &:contains("Django") {
+    background: #064B35;
+    color: white;
+    border-color: #064B35;
+    
+    &:hover {
+      background: white;
+      color: #000;
+    }
+  }
+
+  &[data-tech="django-rest"],
+  &:contains("Django REST") {
+    background: linear-gradient(135deg, #000000 0%, #cc0000 50%, white 100%);
+    color: white;
+    border-color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    
+    &:hover {
+      background: linear-gradient(135deg, white 0%, #cc0000 50%, #064B35 100%);
+      color: white;
+      text-shadow: none;
+    }
+  }
+
+  &[data-tech="firebase"],
+  &:contains("Firebase") {
+    background: linear-gradient(135deg, #FFC400 0%, #FF9100 50%, #DD2C00 100%);
+    color: white;
+    border-color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    
+    &:hover {
+      background: linear-gradient(135deg, #DD2C00 0%, #FF9100 50%, #FFC400 100%);
+      color: linear-gradient(135deg, #DD2C00 0%, #FF9100 50%, #FFC400 100%);
+      text-shadow: none;
+    }
+  }
+  
+  &[data-tech="flask"],
+  &:contains("Flask") {
+    background: #000000;
+    color: white;
+    border-color: #000000;
+    
+    &:hover {
+      background: white;
+      color: #000000;
+    }
+  }
+  
+  &[data-tech="express"],
+  &:contains("Express") {
+    background: #000000;
+    color: white;
+    border-color: #68A063;
+    
+    &:hover {
+      background: #68A063;
+      color: white;
+    }
+  }
+  
+  &[data-tech="laravel"],
+  &:contains("Laravel") {
+    background: #FF2D20;
+    color: white;
+    border-color: #FF2D20;
+    
+    &:hover {
+      background: white;
+      color: #FF2D20;
+    }
+  }
+  
+  &[data-tech="rails"],
+  &:contains("Rails") {
+    background: #CC0000;
+    color: white;
+    border-color: #CC0000;
+    
+    &:hover {
+      background: white;
+      color: #CC0000;
+    }
+  }
+  
+  &[data-tech="spring"],
+  &:contains("Spring") {
+    background: #6DB33F;
+    color: white;
+    border-color: #6DB33F;
+    
+    &:hover {
+      background: white;
+      color: #6DB33F;
+    }
+  }
+  
+  // Programming Languages
+  &[data-tech="javascript"],
+  &:contains("JavaScript") {
+    background: #F7DF1E;
+    color: #000000;
+    border-color: #F7DF1E;
+    
+    &:hover {
+      background: white;
+      color: #000000;
+    }
+  }
+  
+  &[data-tech="typescript"],
+  &:contains("TypeScript") {
+    background: #3178C6;
+    color: white;
+    border-color: #3178C6;
+    
+    &:hover {
+      background: white;
+      color: #3178C6;
+    }
+  }
+  
+  &[data-tech="python"],
+  &:contains("Python") {
+    background: #3776AB;
+    color: white;
+    border-color: #FFD43B;
+    
+    &:hover {
+      background: #FFD43B;
+      color: #3776AB;
+    }
+  }
+  
+  &[data-tech="java"],
+  &:contains("Java") {
+    background: #ED8B00;
+    color: white;
+    border-color: #ED8B00;
+    
+    &:hover {
+      background: white;
+      color: #ED8B00;
+    }
+  }
+  
+  &[data-tech="php"],
+  &:contains("PHP") {
+    background: #777BB4;
+    color: white;
+    border-color: #777BB4;
+    
+    &:hover {
+      background: white;
+      color: #777BB4;
+    }
+  }
+  
+  &[data-tech="csharp"],
+  &:contains("C#") {
+    background: #239120;
+    color: white;
+    border-color: #239120;
+    
+    &:hover {
+      background: white;
+      color: #239120;
+    }
+  }
+  
+  &[data-tech="go"],
+  &:contains("Go") {
+    background: #00ADD8;
+    color: white;
+    border-color: #00ADD8;
+    
+    &:hover {
+      background: white;
+      color: #00ADD8;
+    }
+  }
+  
+  &[data-tech="rust"],
+  &:contains("Rust") {
+    background: #000000;
+    color: white;
+    border-color: #CE422B;
+    
+    &:hover {
+      background: #CE422B;
+      color: white;
+    }
+  }
+  
+  // Databases
+  &[data-tech="mysql"],
+  &:contains("MySQL") {
+    background: #4479A1;
+    color: white;
+    border-color: #4479A1;
+    
+    &:hover {
+      background: white;
+      color: #000000;
+    }
+  }
+  
+  &[data-tech="postgresql"],
+  &:contains("PostgreSQL") {
+    background: #336791;
+    color: white;
+    border-color: #336791;
+    
+    &:hover {
+      background: white;
+      color: #000000;
+    }
+  }
+  
+  &[data-tech="mongodb"],
+  &:contains("MongoDB") {
+    background: #47A248;
+    color: white;
+    border-color: #47A248;
+    
+    &:hover {
+      background: white;
+      color: #47A248;
+    }
+  }
+  
+  &[data-tech="redis"],
+  &:contains("Redis") {
+    background: #DC382D;
+    color: white;
+    border-color: #DC382D;
+    
+    &:hover {
+      background: white;
+      color: #000000;
+    }
+  }
+  
+  &[data-tech="sqlite"],
+  &:contains("SQLite") {
+    background: #003B57;
+    color: white;
+    border-color: #003B57;
+    
+    &:hover {
+      background: white;
+      color: #003B57;
+    }
+  }
+  
+  // Cloud & DevOps
+  &[data-tech="aws"],
+  &:contains("AWS") {
+    background: #FF9900;
+    color: white;
+    border-color: #FF9900;
+    
+    &:hover {
+      background: #232F3E;
+      color: #FF9900;
+    }
+  }
+  
+  &[data-tech="azure"],
+  &:contains("Azure") {
+    background: #0078D4;
+    color: white;
+    border-color: #0078D4;
+    
+    &:hover {
+      background: white;
+      color: #0078D4;
+    }
+  }
+  
+  &[data-tech="gcp"],
+  &:contains("Google Cloud") {
+    background: #4285F4;
+    color: white;
+    border-color: #4285F4;
+    
+    &:hover {
+      background: white;
+      color: #4285F4;
+    }
+  }
+  
+  &[data-tech="docker"],
+  &:contains("Docker") {
+    background: #2496ED;
+    color: white;
+    border-color: #2496ED;
+    
+    &:hover {
+      background: white;
+      color: #2496ED;
+    }
+  }
+  
+  &[data-tech="kubernetes"],
+  &:contains("Kubernetes") {
+    background: #326CE5;
+    color: white;
+    border-color: #326CE5;
+    
+    &:hover {
+      background: white;
+      color: #326CE5;
+    }
+  }
+  
+  // Version Control & Tools
+  &[data-tech="git"],
+  &:contains("Git") {
+    background: #F05032;
+    color: white;
+    border-color: #F05032;
+    
+    &:hover {
+      background: white;
+      color: #F05032;
+    }
+  }
+  
+  &[data-tech="github"],
+  &:contains("GitHub") {
+    background: #181717;
+    color: white;
+    border-color: #181717;
+    
+    &:hover {
+      background: white;
+      color: #181717;
+    }
+  }
+  
+  // API & Integration
+  &[data-tech="graphql"],
+  &:contains("GraphQL") {
+    background: #E10098;
+    color: white;
+    border-color: #E10098;
+    
+    &:hover {
+      background: white;
+      color: #E10098;
+    }
+  }
+  
+  &[data-tech="rest"],
+  &:contains("REST") {
+    background: #009688;
+    color: white;
+    border-color: #009688;
+    
+    &:hover {
+      background: white;
+      color: #009688;
+    }
+  }
+  
+  // Testing
+  &[data-tech="jest"],
+  &:contains("Jest") {
+    background: #C21325;
+    color: white;
+    border-color: #C21325;
+    
+    &:hover {
+      background: white;
+      color: #C21325;
+    }
+  }
+  
+  &[data-tech="cypress"],
+  &:contains("Cypress") {
+    background: #17202C;
+    color: white;
+    border-color: #04C38E;
+    
+    &:hover {
+      background: #04C38E;
+      color: white;
+    }
+  }
+  
+  // Mobile Development
+  &[data-tech="react-native"],
+  &:contains("React Native") {
+    background: #61DAFB;
+    color: #20232A;
+    border-color: #61DAFB;
+    
+    &:hover {
+      background: #20232A;
+      color: #61DAFB;
+    }
+  }
+  
+  &[data-tech="flutter"],
+  &:contains("Flutter") {
+    background: #02569B;
+    color: white;
+    border-color: #02569B;
+    
+    &:hover {
+      background: white;
+      color: #02569B;
+    }
+  }
+  
+  &[data-tech="ionic"],
+  &:contains("Ionic") {
+    background: #3880FF;
+    color: white;
+    border-color: #3880FF;
+    
+    &:hover {
+      background: white;
+      color: #3880FF;
+    }
+  }
+  
+  // CSS Frameworks & Preprocessors
+  &[data-tech="tailwind"],
+  &:contains("Tailwind") {
+    background: #06B6D4;
+    color: white;
+    border-color: #06B6D4;
+    
+    &:hover {
+      background: white;
+      color: #06B6D4;
+    }
+  }
+
+  &[data-tech="css"],
+  &:contains("CSS") {
+    background: #264DE4;
+    color: white;
+    border-color: #264DE4;
+    
+    &:hover {
+      background: white;
+      color: #264DE4;
+    }
+  }
+
+  &[data-tech="html"],
+  &:contains("HTML") {
+    background: #E34F26;
+    color: white;
+    border-color: #E34F26;
+    
+    &:hover {
+      background: white;
+      color: #E34F26;
+    }
+  }
+  
+  
+  &[data-tech="bootstrap"],
+  &:contains("Bootstrap") {
+    background: #7952B3;
+    color: white;
+    border-color: #7952B3;
+    
+    &:hover {
+      background: white;
+      color: #7952B3;
+    }
+  }
+  
+  &[data-tech="sass"],
+  &:contains("Sass") {
+    background: #CC6699;
+    color: white;
+    border-color: #CC6699;
+    
+    &:hover {
+      background: white;
+      color: #CC6699;
+    }
+  }
+  
+  // Build Tools
+  &[data-tech="webpack"],
+  &:contains("Webpack") {
+    background: #8DD6F9;
+    color: #1C78C0;
+    border-color: #8DD6F9;
+    
+    &:hover {
+      background: #1C78C0;
+      color: #8DD6F9;
+    }
+  }
+  
+  &[data-tech="vite"],
+  &:contains("Vite") {
+    background: #646CFF;
+    color: white;
+    border-color: #646CFF;
+    
+    &:hover {
+      background: white;
+      color: #646CFF;
+    }
+  }
+  
+  // Default fallback for unknown technologies
+  &:not([class*="tech-"]):not(:contains("React")):not(:contains("Vue")):not(:contains("Angular")) {
+    background: lighten($primary-color, 40%);
+    color: $primary-color;
+    border-color: $primary-color;
+    
+    &:hover {
+      background: $primary-color;
+      color: white;
+    }
+  }
+}
+
+// Option 1: Card-based Layout with Overlay
+.projects-overlay-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 5rem;
+  
+  .project-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 300px;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      
+      .project-overlay {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    
+    .project-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .project-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      text-align: center;
+      
+      .project-title {
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+      
+      .project-description {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.4rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+      
+      .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+        justify-content: center;
+        
+        .tech-tag {
+          background: rgba(255, 255, 255, 0.2);
+          color: white;
+          padding: 0.25rem 0.75rem;
+          border-radius: 20px;
+          font-size: 0.75rem;
+          backdrop-filter: blur(10px);
+        }
+      }
+      
+      .project-links {
+        display: flex;
+        gap: 1rem;
+        
+        .project-link {
+          background: $primary-color;
+          color: white;
+          padding: 0.5rem 1rem;
+          border-radius: 6px;
+          text-decoration: none;
+          font-size: 0.85rem;
+          transition: background 0.3s ease;
+          
+          &:hover {
+            background: darken($primary-color, 10%);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Option 2: Side-by-side Layout
+.projects-sidebyside {
+  margin-bottom: 5rem;
+  
+  .project-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    align-items: center;
+    
+    &:nth-child(even) {
+      .project-content {
+        order: -1;
+      }
+    }
+    
+    .project-image-container {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      
+      .project-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+      
+      &:hover .project-image {
+        transform: scale(1.05);
+      }
+    }
+    
+    .project-content {
+      padding: 2rem;
+      
+      .project-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: $primary-color;
+        margin-bottom: 1rem;
+      }
+      
+      .project-description {
+        font-size: 1.4rem;
+        line-height: 1.8;
+        color: $dark-grey;
+        margin-bottom: 2rem;
+      }
+      
+      .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-bottom: 2rem;
+        
+        .tech-tag {
+          padding: 0.5rem 1rem;
+          border-radius: 25px;
+          font-size: 0.85rem;
+          font-weight: 500;
+        }
+      }
+      
+      .project-links {
+        display: flex;
+        gap: 1rem;
+        
+        .project-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          background: $primary-color;
+          color: white;
+          padding: 0.75rem 1.5rem;
+          border-radius: 8px;
+          text-decoration: none;
+          font-weight: 500;
+          transition: all 0.3s ease;
+          
+          &:hover {
+            background: darken($primary-color, 10%);
+            transform: translateY(-2px);
+          }
+          
+          &.secondary {
+            background: transparent;
+            color: $primary-color;
+            border: 2px solid $primary-color;
+            
+            &:hover {
+              background: $primary-color;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Option 3: Modern Card Grid with Glassmorphism
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+  
+  .project-card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, $primary-color, lighten($primary-color, 20%));
+    }
+    
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+    
+    .project-header {
+      margin-bottom: 1.5rem;
+      
+      .project-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $primary-color;
+        margin-bottom: 0.5rem;
+      }
+      
+      .project-category {
+        color: $primary-color;
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+    
+    .project-description {
+      color: $dark-grey;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+    
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      
+      .tech-tag {
+        background: rgba($primary-color, 0.1);
+        border: 1px solid rgba($primary-color, 0.3);
+        padding: 0.4rem 0.8rem;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+    }
+    
+    .project-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+      .project-links {
+        display: flex;
+        gap: 1rem;
+        
+        .project-link {
+          color: $primary-color;
+          text-decoration: none;
+          font-weight: 500;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          transition: color 0.3s ease;
+          
+          &:hover {
+            color: darken($primary-color, 15%);
+          }
+        }
+      }
+      
+      .project-status {
+        background: rgba(46, 204, 113, 0.1);
+        color: #2ecc71;
+        padding: 0.3rem 0.8rem;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 3rem 0;
+    
+    .section-title {
+      font-size: 2rem;
+    }
+  }
+  
+  .projects-overlay-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    
+    .project-card {
+      height: auto;
+      
+      .project-overlay {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        background: white;
+        color: $dark-grey;
+        
+        .project-title {
+          color: $primary-color;
+        }
+        
+        .project-description {
+          color: $dark-grey;
+        }
+        
+        .tech-tag {
+          color: white;
+        }
+      }
+    }
+  }
+  
+  .projects-sidebyside {
+    .project-item {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      
+      &:nth-child(even) {
+        .project-content {
+          order: 0;
+        }
+      }
+      
+      .project-content {
+        padding: 1rem;
+        
+        .project-title {
+          font-size: 1.5rem;
+        }
+        
+        .project-description {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    
+    .project-card {
+      padding: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-overlay-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-card {
+    .project-overlay,
+    .project-content {
+      padding: 1rem;
+    }
+  }
+  
+  .projects-sidebyside {
+    .project-item {
+      .project-content {
+        padding: 0.5rem;
+      }
+    }
+  }
+}
+#carousel-happy-aircon {
+  margin: 0 auto;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  
+  .carousel-inner {
+    border-radius: 15px;
+    background: #f8f9fa;
+    
+    .carousel-item {
+      // Don't override Bootstrap's display or positioning
+      padding: 15px;
+      background: #f8f9fa;
+      text-align: center !important;
+      
+      img {
+        width: auto !important;
+        max-width: 100% !important;
+        height: 500px !important;
+        object-fit: contain !important;
+        object-position: center !important;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        background: white;
+        
+        // Center the image
+        display: inline-block !important; // Works with text-align: center
+        margin: 0 auto !important;
+        vertical-align: middle !important; // Vertical centering
+      }
+    }
+  }
+  
+  // Style controls without breaking functionality
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 5%;
+    opacity: 0.7;
+    
+    &:hover {
+      opacity: 1;
+    }
+  }
+  
+  // Style indicators
+  .carousel-indicators {
+    [data-bs-target] {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin: 0 4px;
+      
+      &.active {
+        transform: scale(1.2);
+      }
+    }
+  }
+  
+}
+
+.project-duration {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba($primary-color, 0.1);
+  color: $primary-color;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  border: 1px solid rgba($primary-color, 0.2);
+  
+  .duration-icon {
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+  
+  .duration-text {
+    letter-spacing: 0.3px;
+  }
+  
+  // Status indicators
+  &.ongoing {
+    background: rgba(#28a745, 0.1);
+    color: #28a745;
+    border-color: rgba(#28a745, 0.2);
+    
+    &::after {
+      content: '•';
+      color: #28a745;
+      font-size: 1.2rem;
+      margin-left: 0.3rem;
+      animation: pulse 2s infinite;
+    }
+  }
+  
+  &.completed {
+    background: rgba(#6c757d, 0.1);
+    color: #6c757d;
+    border-color: rgba(#6c757d, 0.2);
+  }
+  
+  &.paused {
+    background: rgba(#ffc107, 0.1);
+    color: #e69500;
+    border-color: rgba(#ffc107, 0.2);
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  #carousel-happy-aircon {
+    max-width: 320px;
+    
+    .carousel-inner .carousel-item img {
+      height: 400px !important;
+    }
+  }
+
+  .project-header {
+    flex-direction: column;
+    gap: 0.5rem;
+    
+    .project-meta {
+      text-align: left;
+    }
+  }
+  
+  .project-duration {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #carousel-happy-aircon {
+    max-width: 280px;
+    
+    .carousel-inner .carousel-item img {
+      height: 350px !important;
+    }
+    
+    .carousel-caption {
+      display: none !important;
+    }
+  }
+}
 }
