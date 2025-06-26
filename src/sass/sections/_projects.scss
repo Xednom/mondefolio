@@ -313,11 +313,11 @@
   &:contains("Python") {
     background: #3776AB;
     color: white;
-    border-color: #FFD43B;
+    border-color: #3776AB;
     
     &:hover {
-      background: #FFD43B;
-      color: #3776AB;
+      background: white;
+      color: #000000;
     }
   }
   
