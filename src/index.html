@@ -768,6 +768,11 @@
     }, 3000); // Change every 3 seconds
   </script> -->
 
+  <script type="module">
+    import { inject } from '@vercel/analytics';
+    inject();
+  </script>
+
   <script defer type="module" src="index.js"></script>
 </body>
 
