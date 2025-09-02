@@ -158,6 +158,18 @@
       color: #000;
     }
   }
+
+  &[data-tech="quasar"],
+  &:contains("Quasar") {
+    background: #1976D2;
+    color: white;
+    border-color: #1976D2;
+    
+    &:hover {
+      background: white;
+      color: #1976D2;
+    }
+  }
   
   &[data-tech="angular"],
   &:contains("Angular") {
