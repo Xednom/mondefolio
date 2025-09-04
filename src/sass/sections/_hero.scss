@@ -4,16 +4,32 @@
   display: flex;
   align-items: center;
   border-bottom: 0px;
-  background: $white-color;
+  background: #0a192f;
   font-weight: 400;
-  color: $dark-blue-text;
+  color: #ccd6f6;
   padding: 0rem 5.6rem;
   margin-bottom: 0;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: -1;
+  z-index: 1 !important; // Changed from -1 to ensure button is clickable
+  position: relative;
+
+  // Brittany Chiang style subtle background
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(100, 255, 218, 0.02) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(100, 255, 218, 0.01) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+  }
 
   // Set position sticky so the jumbotron stays fixed while you scroll.
   // position: sticky;
@@ -30,9 +46,17 @@
 
   .hero-title {
     font-size: 5.6rem;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 3.2rem;
     text-align: left;
+    color: #ccd6f6;
+    line-height: 1.1;
+    
+    // Brittany's style accent color for highlighted text
+    .text-color-main {
+      color: #64ffda;
+      font-weight: 700;
+    }
 
     @include respond(tab-land) {
       font-size: 4rem;
@@ -51,15 +75,19 @@
   }
 
   .hero-cta {
-    position: relative;
+    position: relative !important;
     margin-top: 2rem;
-    position: relative;
-    z-index: 100;
+    z-index: 10000 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    display: block !important;
+    pointer-events: auto !important;
     
     .cta-btn {
-      position: relative;
-      z-index: 101;
-      display: inline-block;
+      position: relative !important;
+      z-index: 10001 !important;
+      display: inline-block !important;
       padding: 1rem 2rem;
       border-radius: 8px;
       text-decoration: none;
@@ -67,18 +95,37 @@
       transition: all 0.3s ease;
       cursor: pointer !important;
       pointer-events: auto !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      transform: none !important;
+      
+      // Override any potential interference
+      &:not([disabled]) {
+        pointer-events: auto !important;
+        cursor: pointer !important;
+      }
       
       &.cta-btn--hero {
-        color: white;
-        border: 2px solid $primary-color;
+        background: transparent;
+        color: #64ffda;
+        border: 2px solid #64ffda;
+        padding: 1rem 2rem;
+        border-radius: 4px;
+        font-size: 1rem;
+        letter-spacing: 0.1rem;
+        transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+        display: inline-block !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        cursor: pointer !important;
         
         &:hover {
-          background: darken($primary-color, 10%);
-          transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba($primary-color, 0.3);
+          background: rgba(100, 255, 218, 0.1);
+          transform: translateY(-3px);
+          box-shadow: 0 10px 30px rgba(100, 255, 218, 0.2);
           cursor: pointer !important;
           text-decoration: none;
-          color: white;
+          color: #64ffda;
         }
         
         &:focus,

@@ -1,40 +1,50 @@
 #about {
-  background-color: $primary-color;
-  background-image: linear-gradient(
-    135deg,
-    $primary-color 0%,
-    $secondary-color 100%
-  );
-  color: $white-color;
-  height: 100%;
-  border-top: 0px;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
-  padding-bottom: 10%;
+  background: #0a192f;
+  color: #8892b0;
+  padding: 100px 0;
+  position: relative;
 
   @include respond(tab-land) {
-    height: 100%;
-    -webkit-clip-path: none;
-    clip-path: none;
+    padding: 80px 0;
+  }
+
+  @include respond(phone) {
+    padding: 60px 0;
+  }
+
+  // Clean Brittany style section title
+  .section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ccd6f6;
+    margin-bottom: 3rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    
+    &::before {
+      content: "01.";
+      margin-right: 10px;
+      color: #64ffda;
+      font-family: 'Courier New', monospace;
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+    
+    &::after {
+      content: "";
+      display: block;
+      position: relative;
+      width: 200px;
+      height: 1px;
+      margin-left: 20px;
+      background-color: #233554;
+    }
   }
 
   .about-wrapper {
     @include respond(phone) {
-      padding-bottom: 5rem;
-    }
-
-    &__image {
-      display: flex;
-      height: 100%;
-      align-items: center;
-      justify-content: center;
-
-      @include respond(tab-land) {
-        height: 100%;
-      }
-      @include respond(tab-port-sm) {
-        padding-bottom: 6.4rem;
-      }
+      padding-bottom: 2rem;
     }
 
     &__info {
@@ -49,6 +59,9 @@
 
       &-text {
         text-align: left;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #8892b0;
 
         @include respond(tab-port) {
           text-align: left;
@@ -58,21 +71,61 @@
         }
 
         &--important {
-          background: darken($secondary-color, 1%);
-          display: inline-block;
-          font-style: italic;
-          padding: 0 0.3rem;
-          margin: 0.3rem 0;
-          line-height: 1.6;
-
-          @include respond(phone) {
-            display: inline;
-            margin: 0;
-            padding: 0;
-            background: transparent;
-            font-style: normal;
-          }
+          color: #64ffda;
+          font-weight: 600;
+          display: inline;
+          margin: 0;
+          padding: 0;
+          background: transparent;
+          font-style: normal;
         }
+      }
+    }
+
+    &__image {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background-color: #64ffda;
+
+      @include respond(tab-land) {
+        height: 100%;
+      }
+      @include respond(tab-port-sm) {
+        padding-bottom: 3rem;
+      }
+
+      // Brittany style image overlay
+      img {
+        border-radius: 4px;
+        mix-blend-mode: multiply;
+        filter: grayscale(100%) contrast(1) brightness(90%);
+        transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+        
+        &:hover {
+          filter: none;
+          mix-blend-mode: normal;
+        }
+      }
+      
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 2px solid #64ffda;
+        top: 20px;
+        left: 20px;
+        z-index: -1;
+        border-radius: 4px;
+        transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+      
+      &:hover::before {
+        top: 15px;
+        left: 15px;
       }
     }
   }

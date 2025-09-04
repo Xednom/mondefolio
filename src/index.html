@@ -34,7 +34,7 @@
   <script defer src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 
   <!-- Todo: remove the below script once you finish your portfolio -->
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- <script async defer src="https://buttons.github.io/buttons.js"></script> -->
 </head>
 
 <!-- Todo: read the following HTML Todos to create your stunning portfolio website -->
@@ -51,8 +51,11 @@
         I'm a&nbsp;<span id="role"></span>
       </h1>
       <span class="about-wrapper__image load-hidden">The Developer that you wish you had.</span>
-      <p class="hero-cta load-hidden">
-        <a rel="noreferrer" class="cta-btn cta-btn--hero" href="#about">Know more</a>
+      <p class="hero-cta"
+        style="visibility: visible !important; opacity: 1 !important; transform: none !important; z-index: 9999 !important; position: relative !important; pointer-events: auto !important;">
+        <a rel="noreferrer" class="cta-btn cta-btn--hero" href="#about" id="know-more-btn"
+          style="visibility: visible !important; opacity: 1 !important; transform: none !important; display: inline-block !important; pointer-events: auto !important; cursor: pointer !important; position: relative !important; z-index: 10000 !important;"
+          onclick="smoothScrollToAbout(event)">Know more</a>
       </p>
     </div>
   </section>
@@ -734,783 +737,380 @@
   </section>
   <!-- /END Skills Section -->
 
-
   <!-- START Projects Section -->
-  <section id="projects" class="projects-section">
+  <section id="projects">
     <div class="container">
       <h2 class="section-title">Featured Projects</h2>
 
-      <div class="projects-sidebyside">
+      <ul class="project-grid">
 
-        <!-- START PROJECT -->
-        <div class="project-item">
-          <div class="project-image-container">
-            <div id="carousel-happy-aircon" class="project-wrapper__image carousel carousel-dark slide"
-              data-bs-ride="carousel">
-              <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carousel-framework" data-bs-slide-to="0" class="active"
-                  aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carousel-framework" data-bs-slide-to="1"
-                  aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carousel-framework" data-bs-slide-to="2"
-                  aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carousel-framework" data-bs-slide-to="3"
-                  aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#carousel-framework" data-bs-slide-to="4"
-                  aria-label="Slide 5"></button>
-                <button type="button" data-bs-target="#carousel-framework" data-bs-slide-to="5"
-                  aria-label="Slide 6"></button>
-                <button type="button" data-bs-target="#carousel-framework" data-bs-slide-to="6"
-                  aria-label="Slide 7"></button>
-                <button type="button" data-bs-target="#carousel-framework" data-bs-slide-to="7"
-                  aria-label="Slide 8"></button>
-                <button type="button" data-bs-target="#carousel-framework" data-bs-slide-to="8" aria-current="true"
-                  aria-label="Slide 9"></button>
-                <button type="button" data-bs-target="#carousel-framework" data-bs-slide-to="9"
-                  aria-label="Slide 10"></button>
-                <button type="button" data-bs-target="#carousel-framework" data-bs-slide-to="10"
-                  aria-label="Slide 11"></button>
-                <button type="button" data-bs-target="#carousel-framework" data-bs-slide-to="11"
-                  aria-label="Slide 12"></button>
-                <button type="button" data-bs-target="#carousel-framework" data-bs-slide-to="12"
-                  aria-label="Slide 13"></button>
-                <button type="button" data-bs-target="#carousel-framework" data-bs-slide-to="13"
-                  aria-label="Slide 14"></button>
-                <button type="button" data-bs-target="#carousel-framework" data-bs-slide-to="14"
-                  aria-label="Slide 15"></button>
-                <button type="button" data-bs-target="#carousel-framework" data-bs-slide-to="15"
-                  aria-label="Slide 16"></button>
-                <button type="button" data-bs-target="#carousel-framework" data-bs-slide-to="16"
-                  aria-label="Slide 17"></button>
-                <button type="button" data-bs-target="#carousel-framework" data-bs-slide-to="17"
-                  aria-label="Slide 18"></button>
-                <button type="button" data-bs-target="#carousel-framework" data-bs-slide-to="18"
-                  aria-label="Slide 19"></button>
+        <!-- Framework Project -->
+        <li class="project left">
+          <div class="project-content">
+            <div>
+              <p class="project-overline">Featured Project</p>
+              <h3 class="project-title">
+                Framework
+              </h3>
+              <p class="project-subtitle">2024 - Present</p>
+              <div class="project-description">
+                <p>Budgetary estimation software solution designed specifically for small to medium-sized residential
+                  contractors and independent tradespeople. Addressing the critical need for rapid and accurate
+                  preliminary cost assessments, this software streamlines the initial estimation process.</p>
               </div>
-
-              <div class="project-wrapper__image carousel-inner">
-                <div class="carousel-item active" data-bs-interval="5000">
-                  <img src="/src/assets/framework/dashboard_stats.png" class="d-block" alt="Framework Dashboard">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Dashboard page</h5>
-                  </div>
-                </div>
-
-                <div class="carousel-item" data-bs-interval="5000">
-                  <img src="/src/assets/framework/register.png" class="d-block" alt="Register page">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Register page</h5>
-                  </div>
-                </div>
-
-                <div class="carousel-item" data-bs-interval="3000">
-                  <img src="/src/assets/framework/login.png" class="d-block" alt="Login page">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Login page</h5>
-                  </div>
-                </div>
-
-                <div class="carousel-item" data-bs-interval="3000">
-                  <img src="/src/assets/framework/project_list.png" class="d-block" alt="Project List">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Project List</h5>
-                  </div>
-                </div>
-
-                <div class="carousel-item" data-bs-interval="3000">
-                  <img src="/src/assets/framework/create_project_step_1.png" class="d-block"
-                    alt="Create Project Step 1">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Create Project Step 1</h5>
-                  </div>
-                </div>
-
-                <div class="carousel-item" data-bs-interval="3000">
-                  <img src="/src/assets/framework/create_project_step_2.png" class="d-block"
-                    alt="Create Project Step 2">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Create Project Step 2</h5>
-                  </div>
-                </div>
-
-                <div class="carousel-item" data-bs-interval="3000">
-                  <img src="/src/assets/framework/create_project_step_3.png" class="d-block"
-                    alt="Create Project Step 3">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Create Project Step 3</h5>
-                  </div>
-                </div>
-
-                <div class="carousel-item" data-bs-interval="3000">
-                  <img src="/src/assets/framework/create_project_step_4.png" class="d-block"
-                    alt="Create Project Step 4">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Create Project Step 4</h5>
-                  </div>
-                </div>
-
-                <div class="carousel-item" data-bs-interval="3000">
-                  <img src="/src/assets/framework/create_project_step_5.png" class="d-block"
-                    alt="Create Project Step 5">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Create Project Step 5</h5>
-                  </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                  <img src="/src/assets/framework/create_project_step_5.png" class="d-block"
-                    alt="Create Project Step 5">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Create Project Step 5</h5>
-                  </div>
-                </div>
-
-                <div class="carousel-item" data-bs-interval="3000">
-                  <img src="/src/assets/framework/create_project_step_6.png" class="d-block"
-                    alt="Create Project Step 6">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Create Project Step 6</h5>
-                  </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                  <img src="/src/assets/framework/create_project_step_7.png" class="d-block "
-                    alt="Create Project Step 7">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Create Project Step 7</h5>
-                  </div>
-                </div>
-
-                <div class="carousel-item" data-bs-interval="3000">
-                  <img src="/src/assets/framework/create_project_trade_quality.png" class="d-block "
-                    alt="Project trade quality">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Project trade quality</h5>
-                  </div>
-                </div>
-
-                <div class="carousel-item" data-bs-interval="3000">
-                  <img src="/src/assets/framework/create_project_step_8_first_half.png" class="d-block"
-                    alt="Create Project Step 8">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Create Project Step 8</h5>
-                  </div>
-                </div>
-
-                <div class="carousel-item" data-bs-interval="3000">
-                  <img src="/src/assets/framework/create_project_step_8_second_half.png" class="d-block"
-                    alt="Create Project Step 8">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Create Project Step 8</h5>
-                  </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                  <img src="/src/assets/framework/create_project_step_8_third_half.png" class="d-block"
-                    alt="Create Project Step 8">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Create Project Step 8</h5>
-                  </div>
-                </div>
-
-                <div class="carousel-item" data-bs-interval="3000">
-                  <img src="/src/assets/framework/edit_project.png" class="d-block" alt="Edit Project">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Edit Project</h5>
-                  </div>
-                </div>
-
-                <div class="carousel-item" data-bs-interval="3000">
-                  <img src="/src/assets/framework/email_project_estimation.png" class="d-block"
-                    alt="Email Project Estimation">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Email Project Estimation</h5>
-                  </div>
-                </div>
+              <ul class="project-tech-list">
+                <li><span class="badge rounded-pill tech-vue">Vue.js</span></li>
+                <li><span class="badge rounded-pill tech-javascript">Javascript</span></li>
+                <li><span class="badge rounded-pill tech-typescript">Typescript</span></li>
+                <li><span class="badge rounded-pill tech-quasar">Quasar</span></li>
+                <li><span class="badge rounded-pill tech-django">Django</span></li>
+                <li><span class="badge rounded-pill tech-django">Django REST</span></li>
+                <li><span class="badge rounded-pill tech-css">CSS</span></li>
+                <li><span class="badge rounded-pill tech-sass">SASS</span></li>
+                <li><span class="badge rounded-pill tech-postgresql">PostgreSQL</span></li>
+                <li><span class="badge rounded-pill tech-redis">Redis</span></li>
+              </ul>
+              <div class="project-links">
+                <a href="https://framework-qa.vercel.app" aria-label="External Link" target="_blank"
+                  rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <title>External Link</title>
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15,3 21,3 21,9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
               </div>
-
-              <button class="carousel-control-prev" type="button" data-bs-target="#carousel-happy-aircon"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-
-              <button class="carousel-control-next" type="button" data-bs-target="#carousel-happy-aircon"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
             </div>
           </div>
-          <div class="project-wrapper__text project-content">
-            <h3 class="project-title">Framework</h3>
-            <!-- Duration badge -->
-            <div class="project-duration ongoing">
-              <i class="fas fa-calendar-alt duration-icon"></i>
-              <span class="duration-text">July 2025 - Present</span>
-            </div>
-
-            <p class="project-description">
-              Budgetary estimation software solution designed specifically for small to medium-sized residential
-              contractors and independent tradespeople. Addressing the critical need for rapid and accurate preliminary
-              cost assessments, this software streamlines the initial estimation process, enabling contractors to
-              quickly qualify leads and present professional, client-facing budgetary figures. By focusing on simplicity
-              and efficiency, this tool aims to eliminate wasted time on projects outside a client's financial scope,
-              ultimately improving workflow and client communication.Budgetary estimation software solution designed
-              specifically for small to medium-sized residential contractors and independent tradespeople. Addressing
-              the critical need for rapid and accurate preliminary cost assessments, this software streamlines the
-              initial estimation process, enabling contractors to quickly qualify leads and present professional,
-              client-facing budgetary figures. By focusing on simplicity and efficiency, this tool aims to eliminate
-              wasted time on projects outside a client's financial scope, ultimately improving workflow and client
-              communication.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag" data-tech="vue">Vue.js</span>
-              <span class="tech-tag" data-tech="quasar">Quasar</span>
-              <span class="tech-tag" data-tech="typescript">Typescript</span>
-              <span class="tech-tag" data-tech="javascript">Javascript</span>
-              <span class="tech-tag" data-tech="html">HTML</span>
-              <span class="tech-tag" data-tech="sass">Sass</span>
-              <span class="tech-tag" data-tech="css">CSS</span>
-              <span class="tech-tag" data-tech="python">Python</span>
-              <span class="tech-tag" data-tech="django">Django</span>
-              <span class="tech-tag" data-tech="django-rest">Django REST</span>
-              <span class="tech-tag" data-tech="redis">Redis</span>
-              <span class="tech-tag" data-tech="postgresql">PostgreSQL</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="project-link">
-                <i class="fas fa-external-link-alt"></i>
-                Coming soon
-              </a>
-            </div>
+          <div class="project-image">
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img src="/src/assets/framework/dashboard_stats.png" alt="Framework Dashboard" />
+            </a>
           </div>
-        </div>
-        <!-- END PROJECT -->
+        </li>
 
-        <!-- START PROJECT -->
-        <div class="project-item">
-          <div class="project-image-container">
-            <div id="carousel-happy-aircon" class="project-wrapper__image carousel carousel-dark slide"
-              data-bs-ride="carousel">
-              <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carousel-happy-aircon" data-bs-slide-to="0" class="active"
-                  aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carousel-happy-aircon" data-bs-slide-to="1"
-                  aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carousel-happy-aircon" data-bs-slide-to="2"
-                  aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carousel-happy-aircon" data-bs-slide-to="3"
-                  aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#carousel-happy-aircon" data-bs-slide-to="4"
-                  aria-label="Slide 5"></button>
-                <button type="button" data-bs-target="#carousel-happy-aircon" data-bs-slide-to="5"
-                  aria-label="Slide 6"></button>
-                <button type="button" data-bs-target="#carousel-happy-aircon" data-bs-slide-to="6"
-                  aria-label="Slide 7"></button>
-                <button type="button" data-bs-target="#carousel-happy-aircon" data-bs-slide-to="7"
-                  aria-label="Slide 8"></button>
+        <!-- Happy Aircon Project -->
+        <li class="project right">
+          <div class="project-content">
+            <div>
+              <p class="project-overline">Featured Project</p>
+              <h3 class="project-title">
+                Happy Aircon
+              </h3>
+              <p class="project-subtitle">2024 - Present</p>
+              <div class="project-description">
+                <p>A comprehensive mobile application for aircon services, booking and management. Features include
+                  real-time notifications, service scheduling, payment integration, and customer management system
+                  for efficient HVAC service delivery.</p>
               </div>
-
-              <div class="project-wrapper__image carousel-inner">
-                <div class="carousel-item active" data-bs-interval="5000">
-                  <img src="assets/happy_aircon/menu_item.jpg" class="d-block mobile-screenshot"
-                    alt="Happy Aircon Menu">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Menu item page</h5>
-                  </div>
-                </div>
-
-                <div class="carousel-item" data-bs-interval="5000">
-                  <img src="assets/happy_aircon/booking_step1.jpg" class="d-block mobile-screenshot"
-                    alt="Booking Step 1">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Booking step 1</h5>
-                  </div>
-                </div>
-
-                <div class="carousel-item" data-bs-interval="3000">
-                  <img src="assets/happy_aircon/booking_step2.jpg" class="d-block mobile-screenshot"
-                    alt="Booking Step 2">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Booking step 2</h5>
-                  </div>
-                </div>
-
-                <div class="carousel-item" data-bs-interval="3000">
-                  <img src="assets/happy_aircon/booking_step3.jpg" class="d-block mobile-screenshot"
-                    alt="Booking Step 3">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Booking step 3</h5>
-                  </div>
-                </div>
-
-                <div class="carousel-item" data-bs-interval="3000">
-                  <img src="assets/happy_aircon/booking_step4.jpg" class="d-block mobile-screenshot"
-                    alt="Booking Step 4">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Booking step 4</h5>
-                  </div>
-                </div>
-
-                <div class="carousel-item" data-bs-interval="3000">
-                  <img src="assets/happy_aircon/booking_final_step.jpg" class="d-block mobile-screenshot"
-                    alt="Final Booking Step">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Booking final step</h5>
-                  </div>
-                </div>
-
-                <div class="carousel-item" data-bs-interval="3000">
-                  <img src="assets/happy_aircon/booking_details_1.jpg" class="d-block mobile-screenshot"
-                    alt="Booking Details Top">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Booking details top half</h5>
-                  </div>
-                </div>
-
-                <div class="carousel-item" data-bs-interval="3000">
-                  <img src="assets/happy_aircon/booking_details_2.jpg" class="d-block mobile-screenshot"
-                    alt="Booking Details Bottom">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Booking details bottom half</h5>
-                  </div>
-                </div>
+              <ul class="project-tech-list">
+                <li><span class="badge rounded-pill tech-vue">Vue.js</span></li>
+                <li><span class="badge rounded-pill tech-javascript">Javascript</span></li>
+                <li><span class="badge rounded-pill tech-typescript">Typescript</span></li>
+                <li><span class="badge rounded-pill tech-ionic">Ionic</span></li>
+                <li><span class="badge rounded-pill tech-capacitor">Capacitor</span></li>
+                <li><span class="badge rounded-pill tech-python">Python</span></li>
+                <li><span class="badge rounded-pill tech-django">Django</span></li>
+                <li><span class="badge rounded-pill tech-django">Django REST</span></li>
+                <li><span class="badge rounded-pill tech-django">Django Channels</span></li>
+                <li><span class="badge rounded-pill tech-redis">Redis</span></li>
+                <li><span class="badge rounded-pill tech-websocket">Websocket</span></li>
+                <li><span class="badge rounded-pill tech-firebase">Firebase Cloud Messaging</span></li>
+                <li><span class="badge rounded-pill tech-postgresql">PostgreSQL</span></li>
+              </ul>
+              <div class="project-links">
+                <a href="#" aria-label="External Link" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <title>External Link</title>
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15,3 21,3 21,9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
               </div>
-
-              <button class="carousel-control-prev" type="button" data-bs-target="#carousel-happy-aircon"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-
-              <button class="carousel-control-next" type="button" data-bs-target="#carousel-happy-aircon"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
             </div>
           </div>
-          <div class="project-wrapper__text project-content">
-            <h3 class="project-title">Happy Aircon - Full-Stack Service Management Platform</h3>
-            <!-- Duration badge -->
-            <div class="project-duration ongoing">
-              <i class="fas fa-calendar-alt duration-icon"></i>
-              <span class="duration-text">Dec 2024 - Present</span>
-            </div>
-
-            <p class="project-description">Developed a full-stack platform consisting of a web app for managing
-              services, bookings, technicians, users, payments, and analytics, and a mobile app for both customers and
-              technicians. Implemented features such as booking, profile management, job assignments for technicians,
-              booking details for customers, and real-time push notifications via Firebase. Integrated PayMongo for
-              in-app payment processing, enabling customers to pay using credit/debit cards and GCash. Built secure
-              RESTful APIs using Django REST Framework and Djoser for authentication.</p>
-            <div class="project-tech">
-              <span class="tech-tag" data-tech="vue">Vue.js</span>
-              <span class="tech-tag" data-tech="nuxt">Nuxt.js</span>
-              <span class="tech-tag" data-tech="typescript">Typescript</span>
-              <span class="tech-tag" data-tech="javascript">Javascript</span>
-              <span class="tech-tag" data-tech="html">HTML</span>
-              <span class="tech-tag" data-tech="sass">Sass</span>
-              <span class="tech-tag" data-tech="css">CSS</span>
-              <span class="tech-tag" data-tech="bootstrap">Bootstrap</span>
-              <span class="tech-tag" data-tech="vue">Ionic vue</span>
-              <span class="tech-tag" data-tech="python">Python</span>
-              <span class="tech-tag" data-tech="django">Django</span>
-              <span class="tech-tag" data-tech="django-rest">Django REST</span>
-              <span class="tech-tag" data-tech="django">Django Channels</span>
-              <span class="tech-tag" data-tech="redis">Redis</span>
-              <span class="tech-tag" data-tech="postgresql">PostgreSQL</span>
-              <span class="tech-tag" data-tech="firebase">Firebase Cloud Messaging</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="project-link">
-                <i class="fas fa-external-link-alt"></i>
-                Coming soon
-              </a>
-            </div>
+          <div class="project-image">
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img src="/src/assets/happy_aircon/menu_item.jpg" alt="Happy Aircon Dashboard" />
+            </a>
           </div>
-        </div>
-        <!-- END PROJECT -->
+        </li>
 
-        <!-- START PROJECT -->
-        <div class="project-item">
-          <div class="project-wrapper__image project-image-container">
-            <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
-              class="thumbnail rounded js-tilt">
-              <img src="assets/psalmsglobal.png" alt="Psalmsglobal login page" class="project-image">
-            </div>
-          </div>
-          <div class="project-wrapper__text project-content">
-            <h3 class="project-title">Psalmsglobal web app</h3>
-            <div class="project-duration completed">
-              <i class="fas fa-calendar-check duration-icon"></i>
-              <span class="duration-text">Aug 2021 - Jul 2023</span>
-            </div>
-            <p class="project-description"> A Call Center Web Application that is designed to support and optimize call
-              center operations by integrating essential features into a single platform. With capabilities for script
-              management, payroll processing, billing, forum interactions, automated notifications, and a telephone
-              directory system, the application aims to enhance operational efficiency and streamline management tasks.
-              Its authentication and authorization mechanisms ensure that the system is secure and accessible only to
-              authorized personnel.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag" data-tech="vue">Vue.js</span>
-              <span class="tech-tag" data-tech="nuxt">Nuxt.js</span>
-              <span class="tech-tag" data-tech="javascript">Javascript</span>
-              <span class="tech-tag" data-tech="sass">SASS</span>
-              <span class="tech-tag" data-tech="css">CSS</span>
-              <span class="tech-tag" data-tech="bootstrap">Bootstrap</span>
-              <span class="tech-tag" data-tech="python">Python</span>
-              <span class="tech-tag" data-tech="django">Django</span>
-              <span class="tech-tag" data-tech="django-rest">Django REST</span>
-              <span class="tech-tag" data-tech="mysql">MySQL</span>
-            </div>
-            <div class="project-links">
-              <a href="https://psalmsglobal.app" class="project-link">
-                <i class="fas fa-external-link-alt"></i>
-                Live Demo
-              </a>
-              <a href="https://github.com/Xednom/gpg-backend" class="project-link secondary" target="_blank">
-                <i class="fa fa-github"></i>
-                Backend
-              </a>
-              <a href="https://github.com/Xednom/gpg_frontend" class="project-link secondary" target="_blank">
-                <i class="fa fa-github"></i>
-                Frontend
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- END PROJECT -->
-
-        <!-- START PROJECT -->
-        <div class="project-item">
-          <div class="project-wrapper__image project-image-container">
-            <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
-              class="thumbnail rounded js-tilt">
-              <img src="assets/landmaster.png" alt="Psalmsglobal login page" class="project-image">
-            </div>
-          </div>
-          <div class="project-wrapper__text project-content">
-            <h3 class="project-title">Landmaster web app</h3>
-            <div class="project-duration completed">
-              <i class="fas fa-calendar-check duration-icon"></i>
-              <span class="duration-text">Feb 2021 - May 2023</span>
-            </div>
-            <p class="project-description"> Developed a comprehensive web-based CRM system tailored for real estate
-              management. This application features a robust set of tools including a news
-              feed, job order management, due diligence tracking, and lead management. It also
-              maintains detailed lists of buyers and sellers, manages assessment, marketing, and
-              listing files, and facilitates task designation and resolution. Additionally, the system
-              provides operational cost tracking and notifications to keep users informed about
-              the client's real estate information.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag" data-tech="vue">Vue.js</span>
-              <span class="tech-tag" data-tech="nuxt">Nuxt.js</span>
-              <span class="tech-tag" data-tech="javascript">Javascript</span>
-              <span class="tech-tag" data-tech="sass">SASS</span>
-              <span class="tech-tag" data-tech="sass">CSS</span>
-              <span class="tech-tag" data-tech="bootstrap">Bootstrap</span>
-              <span class="tech-tag" data-tech="python">Python</span>
-              <span class="tech-tag" data-tech="django">Django</span>
-              <span class="tech-tag" data-tech="django-rest">Django REST</span>
-              <span class="tech-tag" data-tech="mysql">MySQL</span>
-            </div>
-            <div class="project-links">
-              <a href="https://psalmsglobal.app" class="project-link">
-                <i class="fas fa-external-link-alt"></i>
-                Live Demo
-              </a>
-              <a href="https://github.com/Xednom/gpg-backend" class="project-link secondary" target="_blank">
-                <i class="fa fa-github"></i>
-                Backend
-              </a>
-              <a href="https://github.com/Xednom/gpg_frontend" class="project-link secondary" target="_blank">
-                <i class="fa fa-github"></i>
-                Frontend
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- END PROJECT -->
-
-        <!-- START PROJECT -->
-        <div class="project-item">
-          <div class="project-image-container">
-            <div id="carousel-check-my-school" class="project-wrapper__image carousel carousel-dark slide"
-              data-bs-ride="carousel">
-              <div id="carousel-check-my-school" class="carousel carousel-dark slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                </div>
-
-                <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="5000">
-                    <img src="assets/check_my_school/Login page.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Login page</h5>
-                    </div>
-
-                  </div>
-                  <div class="carousel-item" data-bs-interval="5000">
-                    <img src="assets/check_my_school/dashboard.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Dashboard page</h5>
-                    </div>
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-check-my-school"
-                  data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carousel-check-my-school"
-                  data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-
+        <!-- Psalmsglobal web app Project -->
+        <li class="project left">
+          <div class="project-content">
+            <div>
+              <p class="project-overline">Featured Project</p>
+              <h3 class="project-title">
+                Psalmsglobal
+              </h3>
+              <p class="project-subtitle">Aug 2021 - Jul 2023</p>
+              <div class="project-description">
+                <p>A Call Center Web Application that is designed to support and optimize call center operations by
+                  integrating essential features into a single platform. With capabilities for script management,
+                  payroll processing, billing, forum interactions, automated notifications, and a telephone directory
+                  system, the application aims to enhance operational efficiency and streamline management tasks. Its
+                  authentication and authorization mechanisms ensure that the system is secure and accessible only to
+                  authorized personnel. </p>
               </div>
-
-            </div>
-          </div>
-          <div class="project-wrapper__text project-content">
-            <h3 class="project-title">Bridge360 CheckMySchool</h3>
-            <div class="project-duration completed">
-              <i class="fas fa-calendar-check duration-icon"></i>
-              <span class="duration-text">Feb 2020 - May 2020</span>
-            </div>
-            <p class="project-description"> Application providing data through API endpoints (DRF) for the CheckMySchool
-              mobile app and Web admin. Supported by the Department of Education (DepEd), this project aligns with the
-              Open Government Project (OGP), emphasizing transparency and accountability in the education sector.
-
-              The application serves as a back office tool, playing a crucial role in promoting good governance
-              principles.</p>
-            <div class="project-tech">
-              <span class="tech-tag" data-tech="vue">Vue.js</span>
-              <span class="tech-tag" data-tech="javascript">Javascript</span>
-              <span class="tech-tag" data-tech="html">HTML</span>
-              <span class="tech-tag" data-tech="css">CSS</span>
-              <span class="tech-tag" data-tech="bootstrap">Bootstrap</span>
-              <span class="tech-tag" data-tech="python">Python</span>
-              <span class="tech-tag" data-tech="django">Django</span>
-              <span class="tech-tag" data-tech="django-rest">Django REST</span>
-              <span class="tech-tag" data-tech="postgresql">MySQL</span>
-            </div>
-            <div class="project-links">
-            </div>
-          </div>
-        </div>
-        <!-- END PROJECT -->
-
-        <!-- START PROJECT -->
-        <div class="project-item">
-          <div class="project-image-container">
-            <div id="carousel-check-my-school" class="project-wrapper__image carousel carousel-dark slide"
-              data-bs-ride="carousel">
-              <div id="carousel-360-pos" class="carousel carousel-dark slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
-                    aria-label="Slide 4"></button>
-                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4"
-                    aria-label="Slide 5"></button>
-                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5"
-                    aria-label="Slide 6"></button>
-                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="6"
-                    aria-label="Slide 7"></button>
-                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="7"
-                    aria-label="Slide 8"></button>
-                </div>
-
-                <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="5000">
-                    <img src="assets/Bridge360POS/login.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Login page</h5>
-                    </div>
-
-                  </div>
-                  <div class="carousel-item" data-bs-interval="5000">
-                    <img src="assets/Bridge360POS/Overview page.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Overview</h5>
-                    </div>
-                  </div>
-                  <div class="carousel-item" data-bs-interval="3000">
-                    <img src="assets/Bridge360POS/Gasoline Station page.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Gasoline station page</h5>
-                    </div>
-                  </div>
-                  <div class="carousel-item" data-bs-interval="3000">
-                    <img src="assets/Bridge360POS/Add Gasoline station modal.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Add Gasoline station</h5>
-                    </div>
-                  </div>
-                  <div class="carousel-item" data-bs-interval="3000">
-                    <img src="assets/Bridge360POS/Edit Gasoline station modal.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Edit Gasoline station</h5>
-                    </div>
-                  </div>
-                  <div class="carousel-item" data-bs-interval="3000">
-                    <img src="assets/Bridge360POS/List of Fuel prices page.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>List of Fuel price page</h5>
-                    </div>
-                  </div>
-                  <div class="carousel-item" data-bs-interval="3000">
-                    <img src="assets/Bridge360POS/Add Fuel price modal.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Add Fuel price info</h5>
-                    </div>
-                  </div>
-                  <div class="carousel-item" data-bs-interval="3000">
-                    <img src="assets/Bridge360POS/Edit Fuel price modal.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Edit Fuel price info</h5>
-                    </div>
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-360-pos"
-                  data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carousel-360-pos"
-                  data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-
-
+              <ul class="project-tech-list">
+                <li><span class="badge rounded-pill tech-vue">Vue.js</span></li>
+                <li><span class="badge rounded-pill tech-nuxt">Nuxt.js</span></li>
+                <li><span class="badge rounded-pill tech-python">Python</span></li>
+                <li><span class="badge rounded-pill tech-django">Django</span></li>
+                <li><span class="badge rounded-pill tech-django">Django REST</span></li>
+                <li><span class="badge rounded-pill tech-bootstrap">Bootstrap</span></li>
+                <li><span class="badge rounded-pill tech-sass">SASS</span></li>
+                <li><span class="badge rounded-pill tech-css">CSS</span></li>
+                <li><span class="badge rounded-pill tech-mysql">MySQL</span></li>
+              </ul>
+              <div class="project-links">
+                <a href="#" aria-label="External Link" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <title>External Link</title>
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15,3 21,3 21,9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
               </div>
+            </div>
+          </div>
+          <div class="project-image">
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img src="/src/assets/psalmsglobal.png" alt="Psalmsglobal Overview" />
+            </a>
+          </div>
+        </li>
 
+        <!-- Landmaster web app Project -->
+        <li class="project right">
+          <div class="project-content">
+            <div>
+              <p class="project-overline">Featured Project</p>
+              <h3 class="project-title">
+                Landmaster
+              </h3>
+              <p class="project-subtitle">Feb 2021 - May 2023</p>
+              <div class="project-description">
+                <p>Developed a comprehensive web-based CRM system tailored for real estate management. This application
+                  features a robust set of tools including a news feed, job order management, due diligence tracking,
+                  and lead management. It also maintains detailed lists of buyers and sellers, manages assessment,
+                  marketing, and listing files, and facilitates task designation and resolution. Additionally, the
+                  system provides operational cost tracking and notifications to keep users informed about the client's
+                  real estate information. </p>
+              </div>
+              <ul class="project-tech-list">
+                <li><span class="badge rounded-pill tech-vue">Vue.js</span></li>
+                <li><span class="badge rounded-pill tech-nuxt">Nuxt.js</span></li>
+                <li><span class="badge rounded-pill tech-python">Python</span></li>
+                <li><span class="badge rounded-pill tech-django">Django</span></li>
+                <li><span class="badge rounded-pill tech-django">Django REST</span></li>
+                <li><span class="badge rounded-pill tech-bootstrap">Bootstrap</span></li>
+                <li><span class="badge rounded-pill tech-sass">SASS</span></li>
+                <li><span class="badge rounded-pill tech-css">CSS</span></li>
+                <li><span class="badge rounded-pill tech-mysql">MySQL</span></li>
+              </ul>
+              <div class="project-links">
+                <a href="#" aria-label="External Link" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <title>External Link</title>
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15,3 21,3 21,9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
-          <!-- END PROJECT -->
+          <div class="project-image">
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img src="/src/assets/landmaster.png" alt="Landmaster Overview" />
+            </a>
+          </div>
+        </li>
 
-          <!-- START PROJECT -->
-          <div class="project-wrapper__text project-content">
-            <h3 class="project-title">Bridge360 POS</h3>
-            <div class="project-duration completed">
-              <i class="fas fa-calendar-check duration-icon"></i>
-              <span class="duration-text">Feb 2020 - May 2020</span>
-            </div>
-            <p class="project-description">
-              A simple web based point-of-sale system for small to medium-sized gasoline company with web monitoring and
-              online reporting.
-              principles.</p>
-            <div class="project-tech">
-              <span class="tech-tag" data-tech="vue">Vue.js</span>
-              <span class="tech-tag" data-tech="javascript">Javascript</span>
-              <span class="tech-tag" data-tech="html">HTML</span>
-              <span class="tech-tag" data-tech="css">CSS</span>
-              <span class="tech-tag" data-tech="bootstrap">Bootstrap</span>
-              <span class="tech-tag" data-tech="python">Python</span>
-              <span class="tech-tag" data-tech="django">Django</span>
-              <span class="tech-tag" data-tech="django-rest">Django REST</span>
-              <span class="tech-tag" data-tech="postgresql">MySQL</span>
-            </div>
-            <div class="project-links">
-              <!-- <a href="#" class="project-link secondary">
-                <i class="fa fa-github"></i>
-                View Code
-              </a> -->
+        <!-- CheckmySchool Project -->
+        <li class="project left">
+          <div class="project-content">
+            <div>
+              <p class="project-overline">Featured Project</p>
+              <h3 class="project-title">
+                Bridge360 CheckmySchool
+              </h3>
+              <p class="project-subtitle">Feb 2020 - Jul 2020</p>
+              <div class="project-description">
+                <p>Application providing data through API endpoints (DRF) for the CheckMySchool mobile app and Web
+                  admin. Supported by the Department of Education (DepEd), this project aligns with the Open Government
+                  Project (OGP), emphasizing transparency and accountability in the education sector. The application
+                  serves as a back office tool, playing a crucial role in promoting good governance principles.</p>
+              </div>
+              <ul class="project-tech-list">
+                <li><span class="badge rounded-pill tech-vue">Vue.js</span></li>
+                <li><span class="badge rounded-pill tech-python">Python</span></li>
+                <li><span class="badge rounded-pill tech-django">Django</span></li>
+                <li><span class="badge rounded-pill tech-django">Django REST</span></li>
+                <li><span class="badge rounded-pill tech-bootstrap">Bootstrap</span></li>
+                <li><span class="badge rounded-pill tech-css">CSS</span></li>
+                <li><span class="badge rounded-pill tech-mysql">MySQL</span></li>
+              </ul>
+              <div class="project-links">
+                <a href="#" aria-label="External Link" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <title>External Link</title>
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15,3 21,3 21,9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-        <!-- END PROJECT -->
+          <div class="project-image">
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img src="/src/assets/check_my_school/dashboard.png" alt="CheckmySchool Overview" />
+            </a>
+          </div>
+        </li>
 
-        <!-- START PROJECT -->
-        <div class="project-item">
-          <div class="project-wrapper__image project-image-container">
-            <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
-              class="thumbnail rounded js-tilt">
-              <img src="assets/tsg_system/overview.png" alt="Psalmsglobal login page" class="project-image">
+        <!-- Bridge360 POS Project -->
+        <li class="project right">
+          <div class="project-content">
+            <div>
+              <p class="project-overline">Featured Project</p>
+              <h3 class="project-title">
+                Bridge360 POS
+              </h3>
+              <p class="project-subtitle">Feb 2020 - May 2020</p>
+              <div class="project-description">
+                <p>A simple web based point-of-sale system for small to medium-sized gasoline company with web
+                  monitoring and online reporting. principles.</p>
+              </div>
+              <ul class="project-tech-list">
+                <li><span class="badge rounded-pill tech-vue">Vue.js</span></li>
+                <li><span class="badge rounded-pill tech-python">Python</span></li>
+                <li><span class="badge rounded-pill tech-django">Django</span></li>
+                <li><span class="badge rounded-pill tech-django">Django REST</span></li>
+                <li><span class="badge rounded-pill tech-bootstrap">Bootstrap</span></li>
+                <li><span class="badge rounded-pill tech-css">CSS</span></li>
+                <li><span class="badge rounded-pill tech-mysql">MySQL</span></li>
+              </ul>
+              <div class="project-links">
+                <a href="#" aria-label="External Link" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <title>External Link</title>
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15,3 21,3 21,9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
-          <div class="project-wrapper__text project-content">
-            <h3 class="project-title">TSG System</h3>
-            <div class="project-duration completed">
-              <i class="fas fa-calendar-check duration-icon"></i>
-              <span class="duration-text">Dec 2018 - May 2019</span>
-            </div>
-            <p class="project-description"> Web app that handles the necessary medical informations of different patient
-              under different campaigns. The system has PDF printing, excel export. CRUD(Create Read Update Delete)
-              functions on the admin side and in the public site.
-            <div class="project-tech">
-              <span class="tech-tag" data-tech="vue">Vue.js</span>
-              <span class="tech-tag" data-tech="javascript">Javascript</span>
-              <span class="tech-tag" data-tech="html">HTML</span>
-              <span class="tech-tag" data-tech="css">CSS</span>
-              <span class="tech-tag" data-tech="bootstrap">Bootstrap</span>
-              <span class="tech-tag" data-tech="python">Python</span>
-              <span class="tech-tag" data-tech="django">Django</span>
-              <span class="tech-tag" data-tech="mysql">MySQL</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/Xednom/cgx-mims" class="project-link secondary" target="_blank">
-                <i class="fa fa-github"></i>
-                Code
-              </a>
-            </div>
+          <div class="project-image">
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img src="/src/assets/Bridge360POS/Transaction page.png" alt="CheckmySchool Overview" />
+            </a>
           </div>
-        </div>
-        <!-- END PROJECT -->
+        </li>
 
-        <!-- START PROJECT -->
-        <div class="project-item">
-          <div class="project-wrapper__image project-image-container">
-            <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
-              class="thumbnail rounded js-tilt">
-              <img src="assets/gpg_ams/overview.png" alt="Psalmsglobal login page" class="project-image">
+        <!-- TSG System Project -->
+        <li class="project left">
+          <div class="project-content">
+            <div>
+              <p class="project-overline">Featured Project</p>
+              <h3 class="project-title">
+                TSG System
+              </h3>
+              <p class="project-subtitle">Dec 2018 - May 2019</p>
+              <div class="project-description">
+                <p>Web app that handles the necessary medical informations of different patient under different
+                  campaigns. The system has PDF printing, excel export. CRUD(Create Read Update Delete) functions on the
+                  admin side and in the public site. </p>
+              </div>
+              <ul class="project-tech-list">
+                <li><span class="badge rounded-pill tech-vue">Vue.js</span></li>
+                <li><span class="badge rounded-pill tech-python">Python</span></li>
+                <li><span class="badge rounded-pill tech-django">Django</span></li>
+                <li><span class="badge rounded-pill tech-django">Django REST</span></li>
+                <li><span class="badge rounded-pill tech-bootstrap">Bootstrap</span></li>
+                <li><span class="badge rounded-pill tech-css">CSS</span></li>
+                <li><span class="badge rounded-pill tech-mysql">MySQL</span></li>
+              </ul>
+              <div class="project-links">
+                <a href="#" aria-label="External Link" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <title>External Link</title>
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15,3 21,3 21,9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
-          <div class="project-wrapper__text project-content">
-            <h3 class="project-title">GPG AMS</h3>
-            <div class="project-duration completed">
-              <i class="fas fa-calendar-check duration-icon"></i>
-              <span class="duration-text">Oct 2018 - May 2021</span>
-            </div>
-            <p class="project-description"> System limited only for G.P.G Group of Companies. The system stores the
-              following apps including but not limited to job requests, Due Diligence work, Timesheet, Land Academy,
-              CallMe, Craigslist, Marketing Sites Inventory, user informations. And for Clients to view all the work
-              done by the VAs.
-            <div class="project-tech">
-              <span class="tech-tag" data-tech="vue">Vue.js</span>
-              <span class="tech-tag" data-tech="javascript">Javascript</span>
-              <span class="tech-tag" data-tech="html">HTML</span>
-              <span class="tech-tag" data-tech="css">CSS</span>
-              <span class="tech-tag" data-tech="sass">SASS</span>
-              <span class="tech-tag" data-tech="bootstrap">Bootstrap</span>
-              <span class="tech-tag" data-tech="python">Python</span>
-              <span class="tech-tag" data-tech="django">Django</span>
-              <span class="tech-tag" data-tech="mysql">MySQL</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/Xednom/gpg-ams" class="project-link secondary" target="_blank">
-                <i class="fa fa-github"></i>
-                Code
-              </a>
+          <div class="project-image">
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img src="/src/assets/tsg_system/overview.png" alt="TSG system Overview" />
+            </a>
+          </div>
+        </li>
+
+        <!-- GPG System Project -->
+        <li class="project right">
+          <div class="project-content">
+            <div>
+              <p class="project-overline">Featured Project</p>
+              <h3 class="project-title">
+                GPG AMS
+              </h3>
+              <p class="project-subtitle">Oct 2018 - May 2021</p>
+              <div class="project-description">
+                <p>System limited only for G.P.G Group of Companies. The system stores the following apps including but
+                  not limited to job requests, Due Diligence work, Timesheet, Land Academy, CallMe, Craigslist,
+                  Marketing Sites Inventory, user informations. And for Clients to view all the work done by the VAs.
+                </p>
+              </div>
+              <ul class="project-tech-list">
+                <li><span class="badge rounded-pill tech-vue">Vue.js</span></li>
+                <li><span class="badge rounded-pill tech-python">Python</span></li>
+                <li><span class="badge rounded-pill tech-django">Django</span></li>
+                <li><span class="badge rounded-pill tech-django">Django REST</span></li>
+                <li><span class="badge rounded-pill tech-bootstrap">Bootstrap</span></li>
+                <li><span class="badge rounded-pill tech-css">CSS</span></li>
+                <li><span class="badge rounded-pill tech-mysql">MySQL</span></li>
+              </ul>
             </div>
           </div>
-        </div>
-      </div>
-      <!-- END PROJECT -->
+          <div class="project-image">
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img src="/src/assets/gpg_ams/overview.png" alt="GPG AMS Overview" />
+            </a>
+          </div>
+        </li>
+
+      </ul>
+
+      <!-- <div class="more-projects">
+        <a class="archive-link" href="#" target="_blank" rel="noopener noreferrer">
+          View the Archive
+        </a>
+      </div> -->
     </div>
   </section>
 
   <!-- /END Projects Section -->
+
+
 
   <!-- **** Contact Section **** -->
   <section id="contact">
@@ -1544,8 +1144,9 @@
 
       <!-- Notice: if you want to give me some credit, it will be huge for me! if not, put your data on it -->
       <p class="footer__text">
-        © 2021 - Template developed by
-        <a rel="noreferrer" href="https://github.com/cobiwave" target="_blank">Jacobo Martínez</a>
+        © 2025 - This template is mixed designs from Jacobo Martínez
+        <a rel="noreferrer" href="https://github.com/cobiwave/simplefolio" target="_blank">simplefolio's</a> & <a
+          rel="noreferrer" href="https://v4.brittanychiang.com/" target="_blank">Brittany Chiang's</a>
       </p>
 
     </div>
@@ -1576,6 +1177,52 @@
   </script>
 
   <script defer type="module" src="index.js"></script>
+
+  <script>
+    // Function to handle smooth scrolling to about section
+    function smoothScrollToAbout(event) {
+      event.preventDefault();
+      console.log('Button clicked! Starting smooth scroll...');
+
+      const aboutSection = document.getElementById('about');
+      if (aboutSection) {
+        console.log('Found about section, scrolling...');
+        aboutSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+        console.log('Scroll initiated');
+      } else {
+        console.log('About section not found!');
+      }
+      return false;
+    }
+
+    // Ensure button is clickable when DOM loads
+    document.addEventListener('DOMContentLoaded', function () {
+      const button = document.querySelector('.cta-btn--hero');
+      if (button) {
+        button.style.cssText = 'visibility: visible !important; opacity: 1 !important; transform: none !important; display: inline-block !important; pointer-events: auto !important; cursor: pointer !important; position: relative !important; z-index: 10000 !important;';
+        console.log('Button styles applied');
+      }
+    });
+
+    // Also apply styles immediately in case DOM is already loaded
+    const button = document.querySelector('.cta-btn--hero');
+    if (button) {
+      button.style.cssText = 'visibility: visible !important; opacity: 1 !important; transform: none !important; display: inline-block !important; pointer-events: auto !important; cursor: pointer !important; position: relative !important; z-index: 10000 !important;';
+    }
+
+    // Test if button exists
+    console.log('Looking for button...');
+    const testButton = document.getElementById('know-more-btn');
+    if (testButton) {
+      console.log('Button found:', testButton);
+      console.log('Button styles:', getComputedStyle(testButton));
+    } else {
+      console.log('Button not found!');
+    }
+  </script>
 </body>
 
 </html>
