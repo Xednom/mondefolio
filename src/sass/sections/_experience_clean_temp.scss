@@ -2,7 +2,7 @@
 .experience-section {
   padding: 8rem 0;
   position: relative;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 25%, #1f1f1f 50%, #2a2a2a 75%, #1e1e1e 100%);
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 25%, #ffffff 50%, #f1f3f4 75%, #e8eaf6 100%);
   overflow: hidden;
   
   // Add subtle background pattern
@@ -14,9 +14,9 @@
     width: 100%;
     height: 100%;
     background-image: 
-      radial-gradient(circle at 20% 80%, rgba(79, 70, 229, 0.06) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.04) 0%, transparent 50%),
-      radial-gradient(circle at 40% 40%, rgba(6, 182, 212, 0.02) 0%, transparent 50%);
+      radial-gradient(circle at 20% 80%, rgba($primary-color, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba($primary-color, 0.02) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba($primary-color, 0.01) 0%, transparent 50%);
     pointer-events: none;
     z-index: 0;
   }
@@ -30,7 +30,7 @@
     .section-title {
       font-size: 3.5rem;
       font-weight: 800;
-      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #06b6d4 100%);
+      background: linear-gradient(135deg, $primary-color 0%, lighten($primary-color, 15%) 50%, darken($primary-color, 10%) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -46,15 +46,15 @@
         transform: translateX(-50%);
         width: 100px;
         height: 6px;
-        background: linear-gradient(90deg, transparent, #4f46e5, #7c3aed, transparent);
+        background: linear-gradient(90deg, transparent, $primary-color, transparent);
         border-radius: 3px;
-        box-shadow: 0 2px 10px rgba(79, 70, 229, 0.4);
+        box-shadow: 0 2px 10px rgba($primary-color, 0.3);
       }
     }
     
     .section-subtitle {
       font-size: 1.4rem;
-      color: rgba(229, 231, 235, 0.8);
+      color: rgba($dark-grey, 0.7);
       font-weight: 400;
       max-width: 600px;
       margin: 0 auto;
@@ -627,18 +627,38 @@
 }
 
 // Technology-specific colors for tech tags
+
+// Technology-specific colors for tech tags
 .tech-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.7rem 1.4rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+
   // Programming Languages
   &[data-tech="python"] {
     background: linear-gradient(135deg, #3776AB 0%, #FFD43B 100%);
     color: white;
     border-color: #3776AB;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     
     &:hover {
       background: linear-gradient(135deg, #FFD43B 0%, #3776AB 100%);
       color: #3776AB;
-      text-shadow: none;
     }
   }
   
@@ -674,7 +694,7 @@
       color: #ED8B00;
     }
   }
-  
+
   // Frontend Frameworks
   &[data-tech="react"] {
     background: #61DAFB;
@@ -743,18 +763,6 @@
     }
   }
   
-  &[data-tech="django-rest"] {
-    color: white;
-    border-color: #064B35;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    
-    &:hover {
-      background: linear-gradient(135deg, white 0%, #cc0000 50%, #064B35 100%);
-      color: #064B35;
-      text-shadow: none;
-    }
-  }
-  
   &[data-tech="flask"] {
     background: #000000;
     color: white;
@@ -787,16 +795,16 @@
       color: #009688;
     }
   }
-  
-  // Mobile Development
+
+  // Mobile
   &[data-tech="react-native"] {
-    background: linear-gradient(135deg, #61DAFB 0%, #20232A 100%);
-    color: white;
+    background: #61DAFB;
+    color: #20232A;
     border-color: #61DAFB;
     
     &:hover {
-      background: linear-gradient(135deg, #20232A 0%, #61DAFB 100%);
-      color: #20232A;
+      background: #20232A;
+      color: #61DAFB;
     }
   }
   
@@ -810,29 +818,7 @@
       color: #02569B;
     }
   }
-  
-  &[data-tech="android"] {
-    background: #3DDC84;
-    color: white;
-    border-color: #3DDC84;
-    
-    &:hover {
-      background: white;
-      color: #3DDC84;
-    }
-  }
-  
-  &[data-tech="ios"] {
-    background: #000000;
-    color: white;
-    border-color: #000000;
-    
-    &:hover {
-      background: white;
-      color: #000000;
-    }
-  }
-  
+
   // Databases
   &[data-tech="postgresql"] {
     background: #336791;
@@ -846,13 +832,13 @@
   }
   
   &[data-tech="mysql"] {
-    background: #4479A1;
+    background: #00758F;
     color: white;
-    border-color: #4479A1;
+    border-color: #00758F;
     
     &:hover {
       background: white;
-      color: #4479A1;
+      color: #00758F;
     }
   }
   
@@ -866,63 +852,16 @@
       color: #47A248;
     }
   }
-  
-  &[data-tech="redis"] {
-    background: #DC382D;
-    color: white;
-    border-color: #DC382D;
-    
-    &:hover {
-      background: white;
-      color: #DC382D;
-    }
-  }
 
-  &[data-tech="firebase"] {
-    background: linear-gradient(135deg, #FFC400 0%, #FF9100 50%, #DD2C00 100%);
-    color: white;
-    border-color: white;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    
-    &:hover {
-      background: linear-gradient(135deg, #DD2C00 0%, #FF9100 50%, #FFC400 100%);
-      color: linear-gradient(135deg, #DD2C00 0%, #FF9100 50%, #FFC400 100%);
-      text-shadow: none;
-    }
-  }
-  
   // Cloud & DevOps
   &[data-tech="aws"] {
-    background: linear-gradient(135deg, #FF9900 0%, #232F3E 100%);
+    background: #FF9900;
     color: white;
     border-color: #FF9900;
     
     &:hover {
-      background: linear-gradient(135deg, #232F3E 0%, #FF9900 100%);
-      color: #FF9900;
-    }
-  }
-  
-  &[data-tech="azure"] {
-    background: #0078D4;
-    color: white;
-    border-color: #0078D4;
-    
-    &:hover {
       background: white;
-      color: #0078D4;
-    }
-  }
-  
-  &[data-tech="google-cloud"] {
-    background: linear-gradient(135deg, #4285F4 0%, #34A853 25%, #FBBC05 50%, #EA4335 100%);
-    color: white;
-    border-color: #4285F4;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    
-    &:hover {
-      background: linear-gradient(135deg, #EA4335 0%, #FBBC05 25%, #34A853 50%, #4285F4 100%);
-      color: white;
+      color: #FF9900;
     }
   }
   
@@ -937,19 +876,6 @@
     }
   }
   
-  &[data-tech="kubernetes"] {
-  &[data-tech="kubernetes"] {
-    background: #326CE5;
-    color: white;
-    border-color: #326CE5;
-    
-    &:hover {
-      background: white;
-      color: #326CE5;
-    }
-  }
-  
-  // Version Control & Tools
   &[data-tech="git"] {
     background: #F05032;
     color: white;
@@ -960,41 +886,19 @@
       color: #F05032;
     }
   }
-  
-  &[data-tech="github"] {
-    background: #181717;
-    color: white;
-    border-color: #181717;
-    
-    &:hover {
-      background: white;
-      color: #181717;
-    }
-  }
-  
-  // CSS Frameworks
-  &[data-tech="tailwind"] {
-    background: #06B6D4;
-    color: white;
-    border-color: #06B6D4;
-    
-    &:hover {
-      background: white;
-      color: #06B6D4;
-    }
-  }
 
+  // Styling
   &[data-tech="css"] {
-    background: #264DE4;
+    background: #1572B6;
     color: white;
-    border-color: #264DE4;
+    border-color: #1572B6;
     
     &:hover {
       background: white;
-      color: #264DE4;
+      color: #1572B6;
     }
   }
-
+  
   &[data-tech="html"] {
     background: #E34F26;
     color: white;
@@ -1017,6 +921,17 @@
     }
   }
   
+  &[data-tech="tailwind"] {
+    background: #06B6D4;
+    color: white;
+    border-color: #06B6D4;
+    
+    &:hover {
+      background: white;
+      color: #06B6D4;
+    }
+  }
+  
   &[data-tech="sass"] {
     background: #CC6699;
     color: white;
@@ -1027,65 +942,19 @@
       color: #CC6699;
     }
   }
-  
-  // Testing
-  &[data-tech="jest"] {
-    background: #C21325;
-    color: white;
-    border-color: #C21325;
-    
-    &:hover {
-      background: white;
-      color: #C21325;
-    }
-  }
-  
-  &[data-tech="cypress"] {
-    background: #17202C;
-    color: white;
-    border-color: #04C38E;
-    
-    &:hover {
-      background: #04C38E;
-      color: white;
-    }
-  }
-  
-  // API & Integration
-  &[data-tech="graphql"] {
-    background: #E10098;
-    color: white;
-    border-color: #E10098;
-    
-    &:hover {
-      background: white;
-      color: #E10098;
-    }
-  }
-  
-  &[data-tech="rest"] {
-    background: #009688;
-    color: white;
-    border-color: #009688;
-    
-    &:hover {
-      background: white;
-      color: #009688;
-    }
-  }
-  
-  // Default fallback for unknown technologies
+
+  // Default style for any unspecified technologies
   &:not([data-tech]) {
-    background: lighten($primary-color, 40%);
-    color: $primary-color;
+    background: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
+    color: white;
     border-color: $primary-color;
     
     &:hover {
-      background: $primary-color;
-      color: white;
+      background: white;
+      color: $primary-color;
+      border-color: $primary-color;
     }
   }
-}
 }
 
 // Special animations for experience tech tags
@@ -1095,18 +964,24 @@
 }
 
 @keyframes techTagPulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
-// Keyframe Animations
+// Timeline animations
 @keyframes fadeInUp {
-  0% {
+  from {
     opacity: 0;
     transform: translateY(60px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
@@ -1114,53 +989,19 @@
 
 @keyframes pulse {
   0%, 100% {
-    box-shadow: 0 0 30px rgba($primary-color, 0.6);
+    transform: scale(1);
+    opacity: 1;
   }
   50% {
-    box-shadow: 0 0 50px rgba($primary-color, 0.8);
+    transform: scale(1.1);
+    opacity: 0.8;
   }
 }
 
-@keyframes slideInFromLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInFromRight {
-  0% {
-    opacity: 0;
-    transform: translateX(100px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-// Enhanced Responsive Design
+// Responsive Design for Experience Section
 @media (max-width: 1200px) {
-  .experience-section {
-    padding: 6rem 0;
-    
-    .section-header .section-title {
-      font-size: 3rem;
-    }
-  }
-  
   .timeline-container {
-    max-width: 100%;
     padding: 0 1.5rem;
-  }
-  
-  .timeline-item {
-    gap: 3rem;
-    margin-bottom: 6rem;
   }
   
   .experience-card {
@@ -1173,47 +1014,53 @@
   .experience-section {
     padding: 6rem 0;
     
-    .section-header {
-      margin-bottom: 4rem;
-      
-      .section-title {
-        font-size: 3rem;
-      }
+    .section-header .section-title {
+      font-size: 3rem;
+    }
+  }
+  
+  .timeline {
+    &::before {
+      left: 30px;
     }
   }
   
   .timeline-item {
-    margin-bottom: 4rem;
-    
-    &:nth-child(odd) {
-      padding-right: calc(50% + 1.5rem);
-      
-      .timeline-content {
-        max-width: 400px;
-      }
-    }
-    
+    &:nth-child(odd),
     &:nth-child(even) {
-      padding-left: calc(50% + 1.5rem);
-      
-      .timeline-content {
-        max-width: 400px;
-      }
+      justify-content: flex-start;
+      padding-left: 4rem;
+      padding-right: 1rem;
     }
+  }
+  
+  .timeline-marker {
+    left: 30px;
   }
   
   .experience-card {
     padding: 2.5rem;
     min-height: 350px;
   }
+  
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    
+    .experience-meta {
+      text-align: left;
+      margin-top: 1rem;
+    }
+  }
 }
 
 @media (max-width: 768px) {
   .experience-section {
-    padding: 4rem 0;
+    padding: 5rem 0;
     
     .section-header {
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
       
       .section-title {
         font-size: 2.5rem;
@@ -1229,62 +1076,48 @@
     padding: 0 1rem;
   }
   
-  // Mobile: Stack all items vertically, remove alternating layout
-  .timeline {
-    &::before {
-      left: 2rem;
-    }
-  }
-  
   .timeline-item {
-    flex-direction: column;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     
     &:nth-child(odd),
     &:nth-child(even) {
-      justify-content: flex-start;
-      padding-left: 5rem;
-      padding-right: 0;
-      
-      .timeline-content {
-        max-width: none;
-        width: 100%;
-      }
+      padding-left: 3rem;
+      padding-right: 0.5rem;
     }
-  }
-  
-  .timeline-marker {
-    left: 2rem;
-    top: 2rem;
   }
   
   .experience-card {
     padding: 2rem;
-    min-height: auto;
-  }
-  
-  .experience-header {
-    flex-direction: column;
-    gap: 1rem;
+    min-height: 300px;
     
-    .experience-meta {
-      flex-direction: column;
-      gap: 0.5rem;
+    .job-title {
+      font-size: 1.8rem;
+    }
+    
+    .company-name {
+      font-size: 1.3rem;
     }
   }
   
-  .job-title {
-    font-size: 1.5rem;
+  .experience-description p {
+    font-size: 1.1rem;
+    line-height: 1.7;
   }
   
-  .company-name {
-    font-size: 1.1rem;
+  .achievements-list li {
+    font-size: 1rem;
+    padding: 1.2rem 0;
+  }
+  
+  .experience-technologies .tech-tag {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
   }
 }
 
 @media (max-width: 576px) {
   .experience-section {
-    padding: 3rem 0;
+    padding: 4rem 0;
     
     .section-header {
       .section-title {
@@ -1293,125 +1126,60 @@
     }
   }
   
-  .timeline-container {
-    padding: 0 0.5rem;
-  }
-  
   .timeline-item {
     &:nth-child(odd),
     &:nth-child(even) {
-      padding-left: 4rem;
+      padding-left: 2.5rem;
     }
   }
   
   .timeline-marker {
-    left: 1.5rem;
-    
-    .timeline-dot {
-      width: 24px;
-      height: 24px;
-      border-width: 4px;
-    }
+    left: 20px;
   }
   
   .timeline {
     &::before {
-      left: 1.5rem;
-      width: 4px;
+      left: 20px;
     }
   }
   
   .experience-card {
     padding: 1.5rem;
     border-radius: 16px;
-  }
-  
-  .job-title {
-    font-size: 1.3rem;
-  }
-  
-  .company-name {
-    font-size: 1rem;
-  }
-  
-  .experience-technologies {
-    gap: 0.5rem;
     
-    .tech-tag {
-      font-size: 0.8rem;
-      padding: 0.3rem 0.8rem;
+    .job-title {
+      font-size: 1.5rem;
     }
-  }
-}
-
-// Dark mode support (if implemented)
-@media (prefers-color-scheme: dark) {
-  .experience-section {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 25%, #1f1f1f 50%, #2a2a2a 75%, #1e1e1e 100%);
     
-    .section-header .section-subtitle {
-      color: rgba(255, 255, 255, 0.7);
-    }
-  }
-  
-  .experience-card {
-    background: linear-gradient(135deg, rgba(45, 45, 45, 0.95) 0%, rgba(30, 30, 30, 0.95) 100%);
-    border-color: rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.9);
-    
-    &:hover {
-      border-color: rgba($primary-color, 0.3);
+    .company-name {
+      font-size: 1.1rem;
     }
   }
   
   .experience-description p {
-    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    text-align: left;
   }
   
   .achievements-list {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
     
     li {
-      color: rgba(255, 255, 255, 0.8);
-      border-bottom-color: rgba(255, 255, 255, 0.1);
-    }
-  }
-}
-
-// Print styles
-@media print {
-  .experience-section {
-    background: white !important;
-    padding: 2rem 0;
-    
-    &::before {
-      display: none;
-    }
-  }
-  
-  .timeline::before,
-  .timeline::after {
-    display: none;
-  }
-  
-  .timeline-item {
-    break-inside: avoid;
-    margin-bottom: 2rem;
-    flex-direction: column;
-    
-    .experience-card {
-      box-shadow: none;
-      border: 1px solid #ddd;
+      flex-direction: column;
+      text-align: center;
       
-      &::before {
-        display: none;
+      i {
+        margin-bottom: 0.5rem;
       }
     }
   }
   
-  .timeline-dot,
-  .timeline-connector {
-    display: none;
+  .experience-technologies {
+    justify-content: center;
+    
+    .tech-tag {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.75rem;
+    }
   }
 }

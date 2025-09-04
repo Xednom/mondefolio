@@ -1,13 +1,16 @@
 #skills {
     .skills-section {
         padding: 5rem 0;
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 25%, #1f1f1f 50%, #2a2a2a 75%, #1e1e1e 100%);
         
         .section-title {
             text-align: center;
             font-size: 2.5rem;
             font-weight: 700;
-            color: $primary-color;
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 3rem;
             position: relative;
             
@@ -19,14 +22,14 @@
                 transform: translateX(-50%);
                 width: 60px;
                 height: 4px;
-                background: $primary-color;
+                background: linear-gradient(90deg, #4f46e5, #7c3aed, #06b6d4);
                 border-radius: 2px;
             }
         }
     }
     padding: 5rem 0;
-    background: $white-color;
-    color: $dark-blue-text;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 25%, #1f1f1f 50%, #2a2a2a 75%, #1e1e1e 100%);
+    color: #e5e7eb;
     margin-top: -10rem;
     padding-top: 15rem;
 
@@ -37,7 +40,9 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(0, 0, 0, 0.1);
+        background: 
+            radial-gradient(circle at 25% 25%, rgba(79, 70, 229, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, rgba(124, 58, 237, 0.08) 0%, transparent 50%);
         z-index: 1;
     }
 
@@ -54,7 +59,7 @@
             font-size: 1.2rem;
             opacity: 0.9;
             font-weight: 300;
-            color: rgba(0, 0, 0, 0.85);
+            color: rgba(229, 231, 235, 0.85);
             margin-top: -0.5rem;
         }
     }
@@ -73,34 +78,58 @@
     }
 
     .skill-item {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.05);
         border-radius: 20px;
         padding: 2rem;
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         width: 120px; // Fixed width for consistency
         height: 120px; // Fixed height for consistency
+        position: relative;
+        overflow: hidden;
+        
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(124, 58, 237, 0.05) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 20px;
+        }
         
         &:hover {
-            transform: translateY(-8px) scale(1.1);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 
+                0 20px 40px rgba(79, 70, 229, 0.3),
+                0 0 0 1px rgba(79, 70, 229, 0.2);
+            border-color: rgba(79, 70, 229, 0.3);
+            
+            &::before {
+                opacity: 1;
+            }
         }
 
         img {
             width: 80px;
             height: 80px;
-            transition: transform 0.3s ease, filter 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             object-fit: contain;
-            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3)) brightness(0.9);
+            position: relative;
+            z-index: 2;
         }
 
         &:hover img {
-            transform: scale(1.15);
-            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+            transform: scale(1.1);
+            filter: drop-shadow(0 8px 20px rgba(79, 70, 229, 0.4)) brightness(1.1);
         }
 
         // Keep the old icon styles for backwards compatibility
