@@ -242,7 +242,7 @@
   }
   
   .experience-duration {
-    font-size: 0.9rem;
+    font-size: 1.3rem;
     color: #8892b0;
     font-family: 'Courier New', monospace;
     margin-bottom: 1rem;
@@ -267,7 +267,7 @@
       border: 1px solid #64ffda;
       padding: 0.25rem 0.75rem;
       border-radius: 4px;
-      font-size: 0.75rem;
+      font-size: 1.1rem;
       font-family: 'Courier New', monospace;
       transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
       
@@ -328,8 +328,8 @@
   }
   
   .experience-location {
-    font-size: 1rem; // Larger location text
-    color: $dark-grey;
+    font-size: 1.3rem; // Larger location text
+    color: $light-grey;
     opacity: 0.8;
     
     i {
