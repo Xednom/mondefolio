@@ -47,27 +47,29 @@
       line-height: 1.6;
     }
   }
-}// Timeline Container
+}
+
+// Timeline Container
 .timeline-container {
-  max-width: 1700px; // Increased from default
+  max-width: 1400px;
   margin: 0 auto;
   position: relative;
-  padding: 0 2rem; // Add padding for better spacing
+  padding: 0 2rem;
 }
 
 .timeline {
   position: relative;
   
-  // Main timeline line
+  // Main timeline vertical line in the center
   &::before {
     content: '';
     position: absolute;
-    top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 4px;
-    height: 100%;
-    background: linear-gradient(to bottom, $primary-color, lighten($primary-color, 30%));
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, $primary-color, rgba($primary-color, 0.3));
     border-radius: 2px;
     z-index: 1;
   }
@@ -75,48 +77,43 @@
 
 // Timeline Items
 .timeline-item {
-  display: flex;
-  align-items: stretch;
-  gap: 3rem; // Larger gap
-  margin-bottom: 5rem; // Much more spacing between items
   position: relative;
-
-  // Alternate sides
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: flex-start;
+  
+  // Odd items (right side)
   &:nth-child(odd) {
     flex-direction: row;
+    justify-content: flex-end;
+    padding-left: calc(50% + 40px);
     
-    .timeline-content {
-      margin-left: 2rem;
-      text-align: left;
+    .timeline-marker {
+      left: 50%;
+      transform: translateX(-50%);
     }
     
-    .experience-card {
-      &::before {
-        right: 100%;
-        border-right-color: white;
-        border-left: none;
-      }
+    .timeline-content {
+      text-align: left;
     }
   }
   
+  // Even items (left side)
   &:nth-child(even) {
     flex-direction: row-reverse;
+    justify-content: flex-end;
+    padding-right: calc(50% + 40px);
     
-    .timeline-content {
-      margin-right: 2rem;
-      text-align: left;
+    .timeline-marker {
+      right: 50%;
+      transform: translateX(50%);
     }
     
-    .experience-card {
-      &::before {
-        left: 100%;
-        border-left-color: white;
-        border-right: none;
-      }
+    .timeline-content {
+      text-align: left;
     }
   }
   
-  // Last item - remove bottom margin
   &:last-child {
     margin-bottom: 0;
     
@@ -128,81 +125,42 @@
 
 // Timeline Marker
 .timeline-marker {
+  position: absolute;
+  top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-shrink: 0;
   z-index: 10;
   
   .timeline-dot {
-    width: 20px; // Larger dot
-    height: 20px; // Larger dot
+    width: 20px;
+    height: 20px;
+    background: #0a192f;
+    border: 3px solid $primary-color;
     border-radius: 50%;
-    background: $primary-color;
-    border: 4px solid white; // Thicker border
-    box-shadow: 0 0 0 4px $primary-color; // Outer ring
     position: relative;
-    z-index: 11;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0 4px #0a192f;
+    
+    &:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 0 4px #0a192f, 0 0 20px rgba($primary-color, 0.6);
+      background: $primary-color;
+    }
   }
   
   .timeline-connector {
-    width: 4px; // Thicker connector line
-    background: rgba($primary-color, 0.3);
+    width: 3px;
     flex: 1;
-    margin-top: 1rem;
+    background: transparent;
+    margin-top: 0.5rem;
   }
 }
 
-.timeline-dot {
-  width: 20px;
-  height: 20px;
-  background: white;
-  border: 4px solid $primary-color;
-  border-radius: 50%;
-  position: relative;
-  z-index: 3;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  // Hover effect
-  &:hover {
-    transform: scale(1.3);
-    box-shadow: 0 0 20px rgba($primary-color, 0.5);
-  }
-  
-  // Education dot
-  &.education-dot {
-    width: 30px;
-    height: 30px;
-    background: linear-gradient(45deg, #28a745, #20c997);
-    border-color: #28a745;
-    
-    i {
-      color: white;
-      font-size: 0.8rem;
-    }
-  }
-}
-
-.timeline-connector {
-  width: 2px;
-  height: 3rem;
-  background: linear-gradient(to bottom, $primary-color, transparent);
-  margin-top: -2px;
-}
-
-// Timeline Content
 .timeline-content {
-  flex: 1;
-  max-width: 700px; // Significantly increased
   position: relative;
-  
-  // Add more spacing between timeline items
-  &:not(:last-child) {
-    margin-bottom: 4rem; // Increased spacing
-  }
+  width: 100%;
+  max-width: 600px;
 }
 
 // Experience Card
@@ -277,7 +235,8 @@
       }
     }
   }
-}// Experience Header
+}
+// Experience Header
 .experience-header {
   display: flex;
   justify-content: space-between;
@@ -1127,6 +1086,71 @@
         background: $primary-color;
         transform: scale(1.5);
       }
+    }
+  }
+}
+
+// Responsive Design for Timeline
+@media (max-width: 768px) {
+  .timeline-container {
+    padding: 0 1rem;
+  }
+  
+  .timeline {
+    padding-left: 40px;
+    
+    // Move line to left side on mobile
+    &::before {
+      left: 20px;
+      transform: none;
+      width: 2px;
+    }
+  }
+  
+  .timeline-item {
+    // Reset all items to single column on mobile
+    &:nth-child(odd),
+    &:nth-child(even) {
+      flex-direction: row;
+      padding-left: 0;
+      padding-right: 0;
+      justify-content: flex-start;
+    }
+    
+    .timeline-marker {
+      left: 20px;
+      right: auto;
+      transform: translateX(-50%);
+    }
+    
+    .timeline-content {
+      margin-left: 50px;
+      max-width: 100%;
+    }
+  }
+  
+  .timeline-marker {
+    .timeline-dot {
+      width: 16px;
+      height: 16px;
+      border-width: 2px;
+    }
+  }
+  
+  .experience-card {
+    padding: 1.5rem;
+    
+    .job-title {
+      font-size: 1.1rem;
+    }
+    
+    .company-name {
+      font-size: 1rem;
+    }
+    
+    .experience-duration,
+    .experience-description p {
+      font-size: 1rem;
     }
   }
 }
