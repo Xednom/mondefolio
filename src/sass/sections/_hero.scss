@@ -44,6 +44,21 @@
     padding: 0rem $default-font-size;
   }
 
+  .hero-subtitle {
+    display: block;
+    font-size: 1.8rem;
+    color: #8892b0;
+    margin-bottom: 1.5rem;
+
+    @include respond(tab-port) {
+      text-align: center;
+    }
+
+    @include respond(phone) {
+      font-size: 1.5rem;
+    }
+  }
+
   .hero-title {
     font-size: 5.6rem;
     font-weight: 600;
@@ -75,63 +90,39 @@
   }
 
   .hero-cta {
-    position: relative !important;
+    position: relative;
     margin-top: 2rem;
-    z-index: 10000 !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    transform: none !important;
-    display: block !important;
-    pointer-events: auto !important;
-    
+
     .cta-btn {
-      position: relative !important;
-      z-index: 10001 !important;
-      display: inline-block !important;
+      display: inline-block;
       padding: 1rem 2rem;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
       transition: all 0.3s ease;
-      cursor: pointer !important;
-      pointer-events: auto !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-      transform: none !important;
-      
-      // Override any potential interference
-      &:not([disabled]) {
-        pointer-events: auto !important;
-        cursor: pointer !important;
-      }
-      
+      cursor: pointer;
+
       &.cta-btn--hero {
         background: transparent;
         color: #64ffda;
         border: 2px solid #64ffda;
         padding: 1rem 2rem;
         border-radius: 4px;
-        font-size: 1rem;
+        font-size: 1.4rem;
         letter-spacing: 0.1rem;
         transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-        display: inline-block !important;
-        visibility: visible !important;
-        pointer-events: auto !important;
-        cursor: pointer !important;
-        
+
         &:hover {
           background: rgba(100, 255, 218, 0.1);
           transform: translateY(-3px);
           box-shadow: 0 10px 30px rgba(100, 255, 218, 0.2);
-          cursor: pointer !important;
           text-decoration: none;
           color: #64ffda;
         }
-        
+
         &:focus,
         &:active {
           outline: none;
-          cursor: pointer !important;
           color: white;
           text-decoration: none;
         }

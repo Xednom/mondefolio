@@ -23,6 +23,13 @@ export const targetElements = [
     },
   },
   {
+    element: ".hero-subtitle",
+    animation: {
+      delay: 700,
+      origin: "bottom",
+    },
+  },
+  {
     element: ".about-wrapper__image",
     animation: {
       delay: 600,

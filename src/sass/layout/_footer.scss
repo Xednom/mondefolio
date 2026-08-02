@@ -1,28 +1,28 @@
 .footer {
-  background-color: $dark-grey;
-  color: $white-color;
+  background-color: #0a192f;
+  color: #8892b0;
   padding: 4.8rem 0;
+  border-top: 1px solid #233554;
 
   @include respond(phone) {
     border: 0px;
+    border-top: 1px solid #233554;
   }
 
   &__text {
-    color: darken($white-color, 50%);
-    font-size: 1.3rem;
+    color: #8892b0;
+    font-size: 1.5rem;
 
     a {
-      color: darken($white-color, 50%);
-      font-size: 1.3rem;
-      transition: all 0.4s;
+      color: #8892b0;
+      font-size: 1.5rem;
+      transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
       display: inline-block;
-      background-color: $dark-grey;
+      background-color: transparent;
 
       &:hover,
       &:active {
-        color: $primary-color;
-        -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-        box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+        color: #64ffda;
       }
     }
   }
@@ -31,7 +31,7 @@
     margin: 1rem auto;
     border: 0;
     width: 50%;
-    border-top: 2px solid grey;
+    border-top: 1px solid #233554;
   }
 }
 
@@ -44,7 +44,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: $white-color;
+    color: #8892b0;
     font-size: 3rem;
     width: 5rem;
     height: 5rem;
@@ -52,17 +52,23 @@
     transition: all 0.2s ease-in;
 
     &:hover {
+      color: #64ffda;
       transform: translateY(-2px);
+
+      i {
+        color: #64ffda;
+      }
     }
   }
 }
 
 .back-to-top i {
-  color: $white-color;
+  color: #8892b0;
   margin: 1rem 0 $default-font-size;
   transition: all 0.2s ease-in;
 
   &:hover {
+    color: #64ffda;
     transform: translateY(-2px);
   }
 }

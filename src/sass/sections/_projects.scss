@@ -84,7 +84,7 @@
           text-align: left;
 
           @media (max-width: 1080px) {
-            grid-column: 1 / 9;
+            grid-column: 1 / 5;
           }
 
           @media (max-width: 768px) {
@@ -130,7 +130,7 @@
         }
 
         .project-image {
-          grid-column: 6 / -1;
+          grid-column: 7 / -1;
           grid-row: 1 / -1;
 
           @media (max-width: 1080px) {
@@ -147,12 +147,12 @@
 
       &.right {
         .project-content {
-          grid-column: 7 / -1;
+          grid-column: 8 / -1;
           grid-row: 1 / -1;
           text-align: right;
 
           @media (max-width: 1080px) {
-            grid-column: 5 / -1;
+            grid-column: 7 / -1;
           }
 
           @media (max-width: 768px) {
@@ -344,7 +344,7 @@
 
             .badge {
               font-family: 'Courier New', monospace;
-              font-size: 12px;
+              font-size: 13px;
               font-weight: 500;
               padding: 6px 12px;
               border: 1px solid transparent;
@@ -356,7 +356,7 @@
               }
 
               @media (max-width: 768px) {
-                font-size: 11px;
+                font-size: 12px;
                 padding: 5px 10px;
               }
             }

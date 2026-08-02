@@ -1,0 +1,96 @@
+// Fixed section navigation
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(10, 25, 47, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(35, 53, 84, 0.6);
+
+  &__container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include respond(phone) {
+      height: 6rem;
+      padding: 0 2rem;
+    }
+  }
+
+  &__logo {
+    font-family: 'Courier New', monospace;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ccd6f6;
+    text-decoration: none;
+    letter-spacing: 0.05rem;
+
+    &:hover {
+      text-decoration: none;
+      color: #ccd6f6;
+    }
+
+    span {
+      color: #64ffda;
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 2.8rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    a {
+      font-family: 'Courier New', monospace;
+      font-size: 1.5rem;
+      color: #ccd6f6;
+      text-decoration: none;
+      transition: color 0.25s ease;
+
+      &:hover {
+        color: #64ffda;
+        text-decoration: none;
+      }
+    }
+
+    @include respond(tab-port-sm) {
+      gap: 1.8rem;
+
+      a {
+        font-size: 1.35rem;
+      }
+    }
+
+    @include respond(phone) {
+      gap: 1.4rem;
+
+      a {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+
+// Sections should not tuck under the fixed nav when jumped to via anchor links
+#about,
+#experience,
+#skills,
+#projects,
+#contact {
+  scroll-margin-top: 7rem;
+}
