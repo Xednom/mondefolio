@@ -89,11 +89,14 @@
       justify-content: center;
       position: relative;
       background-color: #64ffda;
+      max-width: 300px;
+      margin: 0 auto;
 
       @include respond(tab-land) {
         height: 100%;
       }
       @include respond(tab-port-sm) {
+        max-width: 240px;
         padding-bottom: 3rem;
       }
 
