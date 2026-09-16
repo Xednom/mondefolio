@@ -58,6 +58,20 @@ export const targetElements = [
     },
   },
   {
+    element: ".timeline-item:nth-child(odd)",
+    animation: {
+      delay: 200,
+      origin: window.innerWidth > 768 ? "right" : "bottom",
+    },
+  },
+  {
+    element: ".timeline-item:nth-child(even)",
+    animation: {
+      delay: 200,
+      origin: window.innerWidth > 768 ? "left" : "bottom",
+    },
+  },
+  {
     element: ".contact-wrapper",
     animation: {
       delay: 800,

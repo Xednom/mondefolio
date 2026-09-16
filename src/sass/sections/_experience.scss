@@ -75,14 +75,14 @@
   }
 }
 
-// Timeline Items
+// Timeline Items — cards alternate sides, the date sits in the empty half.
 .timeline-item {
   position: relative;
   margin-bottom: 4rem;
   display: flex;
   align-items: flex-start;
 
-  // Odd items (right side)
+  // Odd items (card right, date left)
   &:nth-child(odd) {
     flex-direction: row;
     justify-content: flex-end;
@@ -93,12 +93,14 @@
       transform: translateX(-50%);
     }
 
-    .timeline-content {
-      text-align: left;
+    .timeline-date {
+      left: 0;
+      text-align: right;
+      padding-right: 2rem;
     }
   }
 
-  // Even items (left side)
+  // Even items (card left, date right)
   &:nth-child(even) {
     flex-direction: row-reverse;
     justify-content: flex-end;
@@ -109,19 +111,42 @@
       transform: translateX(50%);
     }
 
-    .timeline-content {
+    .timeline-date {
+      right: 0;
       text-align: left;
+      padding-left: 2rem;
     }
   }
 
   &:last-child {
     margin-bottom: 0;
   }
+
+  // Hovering anywhere on the row lights the dot
+  &:hover .timeline-dot {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 4px $dark-navy, 0 0 20px rgba($accent-teal, 0.6);
+    background: $accent-teal;
+  }
+
+  &.is-current .timeline-dot {
+    background: $accent-teal;
+  }
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 4px $dark-navy, 0 0 0 4px rgba($accent-teal, 0.6); }
+  100% { box-shadow: 0 0 0 4px $dark-navy, 0 0 0 16px rgba($accent-teal, 0); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .timeline-item.is-current .timeline-dot {
+    animation: pulse-ring 2s ease-out infinite;
+  }
 }
 
 // Timeline Marker
-// The dot sits on the shared center line (drawn by .timeline::before) —
-// no separate per-item connector needed, the line is already continuous.
+// The dot sits on the shared center line (drawn by .timeline::before).
 .timeline-marker {
   position: absolute;
   top: 0.4rem;
@@ -136,12 +161,24 @@
     position: relative;
     transition: all 0.3s ease;
     box-shadow: 0 0 0 4px $dark-navy;
+  }
+}
 
-    &:hover {
-      transform: scale(1.2);
-      box-shadow: 0 0 0 4px $dark-navy, 0 0 20px rgba($accent-teal, 0.6);
-      background: $accent-teal;
-    }
+// Date in the empty half, vertically aligned with the dot
+.timeline-date {
+  position: absolute;
+  top: 0.4rem;
+  width: calc(50% - 40px);
+  font-family: 'Courier New', monospace;
+  font-size: 1.3rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $accent-teal;
+  line-height: 20px; // matches dot height
+
+  i {
+    color: $slate;
+    margin-right: 0.5rem;
   }
 }
 
@@ -157,7 +194,6 @@
   border: 1px solid $border-slate;
   border-radius: 4px;
   padding: 2rem;
-  margin-bottom: 2rem;
   box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 
@@ -174,13 +210,6 @@
     }
   }
 
-  .experience-duration {
-    font-size: 1.4rem;
-    color: $slate;
-    font-family: 'Courier New', monospace;
-    margin-bottom: 1rem;
-  }
-
   .experience-description p {
     font-size: 1.5rem;
     line-height: 1.6;
@@ -188,8 +217,37 @@
     margin-bottom: 1rem;
   }
 
-  // Restores the teal-outline tag design. This sits at (0,3,0) so it intentionally
-  // overrides the .experience-technologies pill rule and the per-tech color blocks below.
+  .achievements-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+
+    li {
+      display: flex;
+      gap: 0.8rem;
+      font-size: 1.5rem;
+      line-height: 1.6;
+      color: $slate;
+      margin-bottom: 0.6rem;
+
+      // Plain bullets (no icon) get a teal marker so both list styles match
+      &::before {
+        content: "▹";
+        color: $accent-teal;
+        flex-shrink: 0;
+      }
+
+      i {
+        color: $accent-teal;
+        margin-top: 0.4rem;
+      }
+
+      &:has(i)::before {
+        content: none;
+      }
+    }
+  }
+
   .experience-technologies {
     display: flex;
     flex-wrap: wrap;
@@ -219,7 +277,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
   flex-wrap: wrap;
   gap: 2rem;
 }
@@ -262,533 +320,6 @@
   }
 }
 
-// Experience Technologies - Tech Tags
-.experience-technologies {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
-
-  .tech-tag {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.7rem 1.4rem;
-    border-radius: 30px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-    position: relative;
-    overflow: hidden;
-    cursor: default;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    // Shimmer effect
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      transition: left 0.5s ease;
-    }
-
-    &:hover::before {
-      left: 100%;
-    }
-  }
-}
-
-// Technology-specific colors for tech tags
-.tech-tag {
-  // Programming Languages
-  &[data-tech="python"] {
-    background: linear-gradient(135deg, #3776AB 0%, #FFD43B 100%);
-    color: white;
-    border-color: #3776AB;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-
-    &:hover {
-      background: linear-gradient(135deg, #FFD43B 0%, #3776AB 100%);
-      color: #3776AB;
-      text-shadow: none;
-    }
-  }
-
-  &[data-tech="javascript"] {
-    background: #F7DF1E;
-    color: #000000;
-    border-color: #F7DF1E;
-
-    &:hover {
-      background: #000000;
-      color: #F7DF1E;
-    }
-  }
-
-  &[data-tech="typescript"] {
-    background: #3178C6;
-    color: white;
-    border-color: #3178C6;
-
-    &:hover {
-      background: white;
-      color: #3178C6;
-    }
-  }
-
-  &[data-tech="java"] {
-    background: #ED8B00;
-    color: white;
-    border-color: #ED8B00;
-
-    &:hover {
-      background: white;
-      color: #ED8B00;
-    }
-  }
-
-  // Frontend Frameworks
-  &[data-tech="react"] {
-    background: #61DAFB;
-    color: #20232A;
-    border-color: #61DAFB;
-
-    &:hover {
-      background: #20232A;
-      color: #61DAFB;
-    }
-  }
-
-  &[data-tech="vue"] {
-    background: #4FC08D;
-    color: white;
-    border-color: #4FC08D;
-
-    &:hover {
-      background: #34495E;
-      color: #4FC08D;
-    }
-  }
-
-  &[data-tech="nuxt"] {
-    background: #00DC82;
-    color: white;
-    border-color: #00DC82;
-
-    &:hover {
-      background: white;
-      color: #000;
-    }
-  }
-
-  &[data-tech="angular"] {
-    background: #DD0031;
-    color: white;
-    border-color: #DD0031;
-
-    &:hover {
-      background: white;
-      color: #DD0031;
-    }
-  }
-
-  &[data-tech="next"] {
-    background: #000000;
-    color: white;
-    border-color: #000000;
-
-    &:hover {
-      background: white;
-      color: #000000;
-    }
-  }
-
-  // Backend Frameworks
-  &[data-tech="django"] {
-    background: #064B35;
-    color: white;
-    border-color: #064B35;
-
-    &:hover {
-      background: white;
-      color: #064B35;
-    }
-  }
-
-  &[data-tech="django-rest"] {
-    background: linear-gradient(135deg, #064B35 0%, #cc0000 50%, white 100%);
-    color: white;
-    border-color: #064B35;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-
-    &:hover {
-      background: linear-gradient(135deg, white 0%, #cc0000 50%, #064B35 100%);
-      color: #064B35;
-      text-shadow: none;
-    }
-  }
-
-  &[data-tech="flask"] {
-    background: #000000;
-    color: white;
-    border-color: #000000;
-
-    &:hover {
-      background: white;
-      color: #000000;
-    }
-  }
-
-  &[data-tech="express"] {
-    background: #000000;
-    color: white;
-    border-color: #68A063;
-
-    &:hover {
-      background: #68A063;
-      color: white;
-    }
-  }
-
-  &[data-tech="fastapi"] {
-    background: #009688;
-    color: white;
-    border-color: #009688;
-
-    &:hover {
-      background: white;
-      color: #009688;
-    }
-  }
-
-  // Mobile Development
-  &[data-tech="react-native"] {
-    background: linear-gradient(135deg, #61DAFB 0%, #20232A 100%);
-    color: white;
-    border-color: #61DAFB;
-
-    &:hover {
-      background: linear-gradient(135deg, #20232A 0%, #61DAFB 100%);
-      color: #20232A;
-    }
-  }
-
-  &[data-tech="flutter"] {
-    background: #02569B;
-    color: white;
-    border-color: #02569B;
-
-    &:hover {
-      background: white;
-      color: #02569B;
-    }
-  }
-
-  &[data-tech="android"] {
-    background: #3DDC84;
-    color: white;
-    border-color: #3DDC84;
-
-    &:hover {
-      background: white;
-      color: #3DDC84;
-    }
-  }
-
-  &[data-tech="ios"] {
-    background: #000000;
-    color: white;
-    border-color: #000000;
-
-    &:hover {
-      background: white;
-      color: #000000;
-    }
-  }
-
-  // Databases
-  &[data-tech="postgresql"] {
-    background: #336791;
-    color: white;
-    border-color: #336791;
-
-    &:hover {
-      background: white;
-      color: #336791;
-    }
-  }
-
-  &[data-tech="mysql"] {
-    background: #4479A1;
-    color: white;
-    border-color: #4479A1;
-
-    &:hover {
-      background: white;
-      color: #4479A1;
-    }
-  }
-
-  &[data-tech="mongodb"] {
-    background: #47A248;
-    color: white;
-    border-color: #47A248;
-
-    &:hover {
-      background: white;
-      color: #47A248;
-    }
-  }
-
-  &[data-tech="redis"] {
-    background: #DC382D;
-    color: white;
-    border-color: #DC382D;
-
-    &:hover {
-      background: white;
-      color: #DC382D;
-    }
-  }
-
-  &[data-tech="firebase"] {
-    background: linear-gradient(135deg, #FFC400 0%, #FF9100 50%, #DD2C00 100%);
-    color: white;
-    border-color: white;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-
-    &:hover {
-      background: linear-gradient(135deg, #DD2C00 0%, #FF9100 50%, #FFC400 100%);
-      text-shadow: none;
-    }
-  }
-
-  // Cloud & DevOps
-  &[data-tech="aws"] {
-    background: linear-gradient(135deg, #FF9900 0%, #232F3E 100%);
-    color: white;
-    border-color: #FF9900;
-
-    &:hover {
-      background: linear-gradient(135deg, #232F3E 0%, #FF9900 100%);
-      color: #FF9900;
-    }
-  }
-
-  &[data-tech="azure"] {
-    background: #0078D4;
-    color: white;
-    border-color: #0078D4;
-
-    &:hover {
-      background: white;
-      color: #0078D4;
-    }
-  }
-
-  &[data-tech="gcp"] {
-    background: linear-gradient(135deg, #4285F4 0%, #34A853 25%, #FBBC05 50%, #EA4335 100%);
-    color: white;
-    border-color: #4285F4;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-
-    &:hover {
-      background: linear-gradient(135deg, #EA4335 0%, #FBBC05 25%, #34A853 50%, #4285F4 100%);
-      color: white;
-    }
-  }
-
-  &[data-tech="docker"] {
-    background: #2496ED;
-    color: white;
-    border-color: #2496ED;
-
-    &:hover {
-      background: white;
-      color: #2496ED;
-    }
-  }
-
-  &[data-tech="kubernetes"] {
-    background: #326CE5;
-    color: white;
-    border-color: #326CE5;
-
-    &:hover {
-      background: white;
-      color: #326CE5;
-    }
-  }
-
-  // Version Control & Tools
-  &[data-tech="git"] {
-    background: #F05032;
-    color: white;
-    border-color: #F05032;
-
-    &:hover {
-      background: white;
-      color: #F05032;
-    }
-  }
-
-  &[data-tech="github"] {
-    background: #181717;
-    color: white;
-    border-color: #181717;
-
-    &:hover {
-      background: white;
-      color: #181717;
-    }
-  }
-
-  // CSS Frameworks
-  &[data-tech="tailwind"] {
-    background: #06B6D4;
-    color: white;
-    border-color: #06B6D4;
-
-    &:hover {
-      background: white;
-      color: #06B6D4;
-    }
-  }
-
-  &[data-tech="css"] {
-    background: #264DE4;
-    color: white;
-    border-color: #264DE4;
-
-    &:hover {
-      background: white;
-      color: #264DE4;
-    }
-  }
-
-  &[data-tech="html"] {
-    background: #E34F26;
-    color: white;
-    border-color: #E34F26;
-
-    &:hover {
-      background: white;
-      color: #E34F26;
-    }
-  }
-
-  &[data-tech="bootstrap"] {
-    background: #7952B3;
-    color: white;
-    border-color: #7952B3;
-
-    &:hover {
-      background: white;
-      color: #7952B3;
-    }
-  }
-
-  &[data-tech="sass"] {
-    background: #CC6699;
-    color: white;
-    border-color: #CC6699;
-
-    &:hover {
-      background: white;
-      color: #CC6699;
-    }
-  }
-
-  // Testing
-  &[data-tech="jest"] {
-    background: #C21325;
-    color: white;
-    border-color: #C21325;
-
-    &:hover {
-      background: white;
-      color: #C21325;
-    }
-  }
-
-  &[data-tech="cypress"] {
-    background: #17202C;
-    color: white;
-    border-color: #04C38E;
-
-    &:hover {
-      background: #04C38E;
-      color: white;
-    }
-  }
-
-  // API & Integration
-  &[data-tech="graphql"] {
-    background: #E10098;
-    color: white;
-    border-color: #E10098;
-
-    &:hover {
-      background: white;
-      color: #E10098;
-    }
-  }
-
-  &[data-tech="rest"] {
-    background: #009688;
-    color: white;
-    border-color: #009688;
-
-    &:hover {
-      background: white;
-      color: #009688;
-    }
-  }
-
-  // Default fallback for unknown technologies
-  &:not([data-tech]) {
-    background: lighten($accent-teal, 40%);
-    color: $accent-teal;
-    border-color: $accent-teal;
-
-    &:hover {
-      background: $accent-teal;
-      color: white;
-    }
-  }
-}
-
-// Animation for timeline items
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.timeline-item {
-  animation: fadeInUp 0.6s ease-out;
-
-  &:nth-child(1) { animation-delay: 0.1s; }
-  &:nth-child(2) { animation-delay: 0.2s; }
-  &:nth-child(3) { animation-delay: 0.3s; }
-  &:nth-child(4) { animation-delay: 0.4s; }
-}
-
 // Responsive Design for Timeline
 
 // Reduce the alternating-column gutter before the layout fully collapses,
@@ -802,6 +333,10 @@
     &:nth-child(even) {
       padding-right: calc(50% + 20px);
     }
+  }
+
+  .timeline-date {
+    width: calc(50% - 20px);
   }
 
   .timeline-content {
@@ -853,10 +388,10 @@
   }
 
   .timeline-item {
-    // Reset all items to single column on mobile
+    // Reset all items to single column on mobile; date stacks above the card
     &:nth-child(odd),
     &:nth-child(even) {
-      flex-direction: row;
+      flex-direction: column;
       padding-left: 0;
       padding-right: 0;
       justify-content: flex-start;
@@ -868,11 +403,18 @@
         right: auto;
         transform: translateX(-50%);
       }
+
+      .timeline-date {
+        position: static;
+        width: auto;
+        text-align: left;
+        padding: 0 0 0.8rem 50px;
+      }
     }
 
     .timeline-content {
       margin-left: 50px;
-      max-width: 100%;
+      max-width: calc(100% - 50px);
     }
   }
 
@@ -882,6 +424,10 @@
       height: 16px;
       border-width: 2px;
     }
+  }
+
+  .timeline-date {
+    line-height: 16px;
   }
 
   .experience-card {
@@ -895,29 +441,20 @@
       font-size: 1.3rem;
     }
 
-    .experience-duration,
-    .experience-description p {
+    .experience-description p,
+    .achievements-list li {
       font-size: 1.3rem;
     }
   }
 }
 
 @media (max-width: 480px) {
-  .experience-card {
-    padding: 1.5rem;
-  }
-
   .experience-title-group .job-title {
     font-size: 1.2rem;
   }
 
   .experience-meta {
     flex-direction: column;
-  }
-
-  .timeline-dot {
-    width: 16px;
-    height: 16px;
   }
 
   .experience-technologies {
