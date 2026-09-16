@@ -295,4 +295,70 @@
       }
     }
   }
+
+  .ai-tools {
+    max-width: 1000px;
+    margin: 60px auto 0;
+    padding: 0 20px;
+
+    @media (max-width: 768px) {
+      margin-top: 40px;
+    }
+  }
+
+  .ai-tools__title {
+    text-align: center;
+    margin: 0 0 30px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ccd6f6;
+
+    @media (max-width: 768px) {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .ai-tools__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .ai-tool-card {
+    padding: 25px;
+    background: #112240;
+    border: 1px solid #233554;
+    border-radius: 8px;
+
+    @media (max-width: 480px) {
+      padding: 20px;
+    }
+
+    h4 {
+      margin: 0 0 12px;
+      font-size: 17px;
+      font-weight: 600;
+      color: #64ffda;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    li {
+      color: #a8b2d1;
+      font-size: 15px;
+      line-height: 1.6;
+
+      + li {
+        margin-top: 8px;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 14px;
+      }
+    }
+  }
 }
